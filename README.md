@@ -12,7 +12,7 @@
 ## SDK Installation
 
 ```bash
-pip install git+https://github.com/speakeasy-sdks/smartcar-py.git
+pip install SmartCar
 ```
 <!-- End SDK Installation -->
 
