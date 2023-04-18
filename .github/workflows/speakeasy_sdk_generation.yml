@@ -3,7 +3,6 @@ name: Generate
 permissions:
   checks: write
   pull-requests: write
-  contents: write
   statuses: write
 
 on:
