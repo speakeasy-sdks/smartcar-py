@@ -4,7 +4,7 @@ import requests as requests_http
 from . import utils
 from smartcar.models import operations
 
-class EVs:
+class Evs:
     r"""Operations about electric vehicles"""
     _client: requests_http.Session
     _security_client: requests_http.Session
