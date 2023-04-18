@@ -40,7 +40,7 @@ if res.status_code == 200:
 
 * `list_compatibility` - Compatibility
 
-### e_vs
+### evs
 
 * `get_battery_capacity` - EV Battery Capacity
 * `get_battery_level` - EV Battery Level

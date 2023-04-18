@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from .compatibility import Compatibility
-from .evs import EVs
+from .evs import Evs
 from .vehicles import Vehicles
 from smartcar.models import shared
 
@@ -19,7 +19,7 @@ class Smartcar:
     """
     compatibility: Compatibility
     r"""Operations about compatibility"""
-    e_vs: EVs
+    evs: Evs
     r"""Operations about electric vehicles"""
     vehicles: Vehicles
     r"""Operations about vehicles"""
@@ -28,7 +28,7 @@ class Smartcar:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "3.0.0"
+    _sdk_version: str = "3.0.1"
     _gen_version: str = "2.18.2"
 
     def __init__(self,
@@ -75,7 +75,7 @@ class Smartcar:
             self._gen_version
         )
         
-        self.e_vs = EVs(
+        self.evs = Evs(
             self._client,
             self._security_client,
             self._server_url,
