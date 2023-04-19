@@ -3,6 +3,7 @@
 import requests as requests_http
 from . import utils
 from smartcar.models import operations
+from typing import Any
 
 class Compatibility:
     r"""Operations about compatibility"""
@@ -12,14 +13,16 @@ class Compatibility:
     _language: str
     _sdk_version: str
     _gen_version: str
+    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
+        self._globals = gbls
         
     def list_compatibility(self, request: operations.ListCompatibilityRequest) -> operations.ListCompatibilityResponse:
         r"""Compatibility
@@ -62,7 +65,7 @@ class Compatibility:
         
         url = base_url.removesuffix('/') + '/compatibility'
         
-        query_params = utils.get_query_params(operations.ListCompatibilityRequest, request)
+        query_params = utils.get_query_params(operations.ListCompatibilityRequest, request, self._globals)
         
         client = self._security_client
         

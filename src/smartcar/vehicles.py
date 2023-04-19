@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from smartcar.models import operations, shared
-from typing import Optional
+from typing import Any, Optional
 
 class Vehicles:
     r"""Operations about vehicles"""
@@ -13,14 +13,16 @@ class Vehicles:
     _language: str
     _sdk_version: str
     _gen_version: str
+    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
+        self._globals = gbls
         
     def disconnect(self, request: operations.DisconnectRequest) -> operations.DisconnectResponse:
         r"""Revoke Access
@@ -36,7 +38,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.DisconnectRequest, base_url, '/vehicles/{vehicle_id}/application', request)
+        url = utils.generate_url(operations.DisconnectRequest, base_url, '/vehicles/{vehicle_id}/application', request, self._globals)
         
         
         client = self._security_client
@@ -74,7 +76,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetVehicleRequest, base_url, '/vehicles/{vehicle_id}', request)
+        url = utils.generate_url(operations.GetVehicleRequest, base_url, '/vehicles/{vehicle_id}', request, self._globals)
         
         
         client = self._security_client
@@ -109,7 +111,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetEngineOilRequest, base_url, '/vehicles/{vehicle_id}/engine/oil', request)
+        url = utils.generate_url(operations.GetEngineOilRequest, base_url, '/vehicles/{vehicle_id}/engine/oil', request, self._globals)
         
         
         client = self._security_client
@@ -142,7 +144,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetFuelTankRequest, base_url, '/vehicles/{vehicle_id}/fuel', request)
+        url = utils.generate_url(operations.GetFuelTankRequest, base_url, '/vehicles/{vehicle_id}/fuel', request, self._globals)
         
         
         client = self._security_client
@@ -174,7 +176,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetLocationRequest, base_url, '/vehicles/{vehicle_id}/location', request)
+        url = utils.generate_url(operations.GetLocationRequest, base_url, '/vehicles/{vehicle_id}/location', request, self._globals)
         
         
         client = self._security_client
@@ -205,7 +207,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetOdometerRequest, base_url, '/vehicles/{vehicle_id}/odometer', request)
+        url = utils.generate_url(operations.GetOdometerRequest, base_url, '/vehicles/{vehicle_id}/odometer', request, self._globals)
         
         
         client = self._security_client
@@ -243,9 +245,9 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetPermissionsRequest, base_url, '/vehicles/{vehicle_id}/permissions', request)
+        url = utils.generate_url(operations.GetPermissionsRequest, base_url, '/vehicles/{vehicle_id}/permissions', request, self._globals)
         
-        query_params = utils.get_query_params(operations.GetPermissionsRequest, request)
+        query_params = utils.get_query_params(operations.GetPermissionsRequest, request, self._globals)
         
         client = self._security_client
         
@@ -277,7 +279,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetTirePressureRequest, base_url, '/vehicles/{vehicle_id}/tires/pressure', request)
+        url = utils.generate_url(operations.GetTirePressureRequest, base_url, '/vehicles/{vehicle_id}/tires/pressure', request, self._globals)
         
         
         client = self._security_client
@@ -317,7 +319,7 @@ class Vehicles:
         
         url = base_url.removesuffix('/') + '/vehicles'
         
-        query_params = utils.get_query_params(operations.ListVehiclesRequest, request)
+        query_params = utils.get_query_params(operations.ListVehiclesRequest, request, self._globals)
         
         client = self._security_client
         
@@ -347,7 +349,7 @@ class Vehicles:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.LockUnlockRequest, base_url, '/vehicles/{vehicle_id}/security', request)
+        url = utils.generate_url(operations.LockUnlockRequest, base_url, '/vehicles/{vehicle_id}/security', request, self._globals)
         
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "security_action", 'json')
