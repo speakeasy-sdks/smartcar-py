@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import vehiclesresponse as shared_vehiclesresponse
 from typing import Optional
 
 
@@ -21,4 +22,6 @@ class ListVehiclesResponse:
     content_type: str = dataclasses.field()  
     status_code: int = dataclasses.field()  
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    vehicles_response: Optional[shared_vehiclesresponse.VehiclesResponse] = dataclasses.field(default=None)
+    r"""A list of vehicles"""  
     

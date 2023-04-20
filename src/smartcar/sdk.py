@@ -6,6 +6,7 @@ from .compatibility import Compatibility
 from .evs import Evs
 from .vehicles import Vehicles
 from smartcar.models import shared
+from typing import Any
 
 SERVERS = [
     "https://api.smartcar.com/v2.0",
@@ -28,11 +29,13 @@ class Smartcar:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "3.0.2"
-    _gen_version: str = "2.18.2"
+    _sdk_version: str = "3.1.0"
+    _gen_version: str = "2.19.1"
+    _globals: dict[str, dict[str, dict[str, Any]]]
 
     def __init__(self,
                  security: shared.Security = None,
+                 vehicle_id: str = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
                  client: requests_http.Session = None
@@ -41,6 +44,8 @@ class Smartcar:
         
         :param security: The security details required for authentication
         :type security: shared.Security
+        :param vehicle_id: Configures the vehicle_id parameter for all supported operations
+        :type vehicle_id: str
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
@@ -50,6 +55,15 @@ class Smartcar:
         """
         self._client = requests_http.Session()
         
+        self._globals = {
+            "parameters": {
+                "queryParam": {
+                },
+                "pathParam": {
+                    "vehicle_id": vehicle_id,
+                },
+            },
+        }
         
         if server_url is not None:
             if url_params is not None:
@@ -72,7 +86,8 @@ class Smartcar:
             self._server_url,
             self._language,
             self._sdk_version,
-            self._gen_version
+            self._gen_version,
+            self._globals
         )
         
         self.evs = Evs(
@@ -81,7 +96,8 @@ class Smartcar:
             self._server_url,
             self._language,
             self._sdk_version,
-            self._gen_version
+            self._gen_version,
+            self._globals
         )
         
         self.vehicles = Vehicles(
@@ -90,7 +106,8 @@ class Smartcar:
             self._server_url,
             self._language,
             self._sdk_version,
-            self._gen_version
+            self._gen_version,
+            self._globals
         )
         
     

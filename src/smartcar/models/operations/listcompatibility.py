@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import compatibilityresponse as shared_compatibilityresponse
 from typing import Optional
 
 
@@ -19,5 +20,7 @@ class ListCompatibilityResponse:
     
     content_type: str = dataclasses.field()  
     status_code: int = dataclasses.field()  
+    compatibility_response: Optional[shared_compatibilityresponse.CompatibilityResponse] = dataclasses.field(default=None)
+    r"""return Compatibility"""  
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
     
