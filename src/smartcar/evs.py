@@ -3,6 +3,7 @@
 import requests as requests_http
 from . import utils
 from smartcar.models import operations
+from typing import Any
 
 class Evs:
     r"""Operations about electric vehicles"""
@@ -12,14 +13,16 @@ class Evs:
     _language: str
     _sdk_version: str
     _gen_version: str
+    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
+        self._globals = gbls
         
     def get_battery_capacity(self, request: operations.GetBatteryCapacityRequest) -> operations.GetBatteryCapacityResponse:
         r"""EV Battery Capacity
@@ -39,7 +42,7 @@ class Evs:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetBatteryCapacityRequest, base_url, '/vehicles/{vehicle_id}/battery/capacity', request)
+        url = utils.generate_url(operations.GetBatteryCapacityRequest, base_url, '/vehicles/{vehicle_id}/battery/capacity', request, self._globals)
         
         
         client = self._security_client
@@ -71,7 +74,7 @@ class Evs:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetBatteryLevelRequest, base_url, '/vehicles/{vehicle_id}/battery', request)
+        url = utils.generate_url(operations.GetBatteryLevelRequest, base_url, '/vehicles/{vehicle_id}/battery', request, self._globals)
         
         
         client = self._security_client
@@ -103,7 +106,7 @@ class Evs:
         """
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetChargingStatusRequest, base_url, '/vehicles/{vehicle_id}/charge', request)
+        url = utils.generate_url(operations.GetChargingStatusRequest, base_url, '/vehicles/{vehicle_id}/charge', request, self._globals)
         
         
         client = self._security_client

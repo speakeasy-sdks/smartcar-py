@@ -9,7 +9,7 @@ from typing import Optional
 @dataclasses.dataclass
 class GetBatteryCapacityRequest:
     
-    vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
+    vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
     
 
 @dataclasses.dataclass
