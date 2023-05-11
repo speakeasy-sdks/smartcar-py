@@ -16,9 +16,8 @@ class ChargeStatusStateEnum(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ChargeStatus:
-    r"""return EV Charge reading"""
     
     is_plugged_in: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isPluggedIn'), 'exclude': lambda f: f is None }})
-    r"""Indicates whether a charging cable is currently plugged into the vehicle’s charge port."""  
-    state: Optional[ChargeStatusStateEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})  
+    r"""Indicates whether a charging cable is currently plugged into the vehicle’s charge port."""
+    state: Optional[ChargeStatusStateEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state'), 'exclude': lambda f: f is None }})
     
