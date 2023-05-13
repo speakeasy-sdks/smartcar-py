@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from smartcar.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Vehicles:
     r"""Operations about vehicles"""
@@ -13,18 +13,50 @@ class Vehicles:
     _language: str
     _sdk_version: str
     _gen_version: str
-    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-        self._globals = gbls
         
-    def disconnect(self, request: operations.DisconnectRequest) -> operations.DisconnectResponse:
+    
+    def batch(self, vehicle_id: str, request_body: Optional[list[str]] = None) -> operations.BatchResponse:
+        r"""Batch
+        __Description__ Returns a list of responses from multiple Smartcar endpoints, all combined into a single request. Note: Batch requests is a paid feature. Please contact us to upgrade your plan and obtain access.
+        """
+        request = operations.BatchRequest(
+            vehicle_id=vehicle_id,
+            request_body=request_body,
+        )
+        
+        base_url = self._server_url
+        
+        url = utils.generate_url(operations.BatchRequest, base_url, '/vehicles/{vehicle_id}/batch', request)
+        
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        
+        client = self._security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.BatchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.BatchResponse])
+                res.batch_response = out
+
+        return res
+
+    
+    def disconnect(self, vehicle_id: str) -> operations.DisconnectResponse:
         r"""Revoke Access
         __Description__
         
@@ -36,9 +68,13 @@ class Vehicles:
         |---	|---	|---	|
         |  status|   string|  If the request is successful, Smartcar will return “success” (HTTP 200 status).|
         """
+        request = operations.DisconnectRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.DisconnectRequest, base_url, '/vehicles/{vehicle_id}/application', request, self._globals)
+        url = utils.generate_url(operations.DisconnectRequest, base_url, '/vehicles/{vehicle_id}/application', request)
         
         
         client = self._security_client
@@ -55,7 +91,8 @@ class Vehicles:
 
         return res
 
-    def get(self, request: operations.GetVehicleRequest) -> operations.GetVehicleResponse:
+    
+    def get(self, vehicle_id: str) -> operations.GetVehicleResponse:
         r"""Vehicle Info
         __Permission__
         
@@ -74,9 +111,13 @@ class Vehicles:
         |`model`|integer|The model of the vehicle.|
         |`year`|integer|The model year.|
         """
+        request = operations.GetVehicleRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetVehicleRequest, base_url, '/vehicles/{vehicle_id}', request, self._globals)
+        url = utils.generate_url(operations.GetVehicleRequest, base_url, '/vehicles/{vehicle_id}', request)
         
         
         client = self._security_client
@@ -93,7 +134,8 @@ class Vehicles:
 
         return res
 
-    def get_engine_oil(self, request: operations.GetEngineOilRequest) -> operations.GetEngineOilResponse:
+    
+    def get_engine_oil(self, vehicle_id: str) -> operations.GetEngineOilResponse:
         r"""Engine Oil Life
         __Description__
         
@@ -109,9 +151,13 @@ class Vehicles:
         |---	|---	|---	|
         |  `lifeRemaining`|   number|  The engine oil’s remaining life span (as a percentage). Oil life is based on the current quality of the oil. (in percent).|
         """
+        request = operations.GetEngineOilRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetEngineOilRequest, base_url, '/vehicles/{vehicle_id}/engine/oil', request, self._globals)
+        url = utils.generate_url(operations.GetEngineOilRequest, base_url, '/vehicles/{vehicle_id}/engine/oil', request)
         
         
         client = self._security_client
@@ -128,7 +174,8 @@ class Vehicles:
 
         return res
 
-    def get_fuel_tank(self, request: operations.GetFuelTankRequest) -> operations.GetFuelTankResponse:
+    
+    def get_fuel_tank(self, vehicle_id: str) -> operations.GetFuelTankResponse:
         r"""Fuel Tank (US Only)
         __Description__
         
@@ -146,9 +193,13 @@ class Vehicles:
         |`percentRemaining`|number|The remaining level of fuel in the tank (in percent).|
         |`amountRemaining`|number|The amount of fuel in the tank (in liters by default or in gallons (U.S.) using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
         """
+        request = operations.GetFuelTankRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetFuelTankRequest, base_url, '/vehicles/{vehicle_id}/fuel', request, self._globals)
+        url = utils.generate_url(operations.GetFuelTankRequest, base_url, '/vehicles/{vehicle_id}/fuel', request)
         
         
         client = self._security_client
@@ -165,7 +216,8 @@ class Vehicles:
 
         return res
 
-    def get_location(self, request: operations.GetLocationRequest) -> operations.GetLocationResponse:
+    
+    def get_location(self, vehicle_id: str) -> operations.GetLocationResponse:
         r"""Location
         __Description__
         
@@ -182,9 +234,13 @@ class Vehicles:
         |`latitude`|number|The latitude (in degrees).|
         |`longitude`|number|The longitude (in degrees).|
         """
+        request = operations.GetLocationRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetLocationRequest, base_url, '/vehicles/{vehicle_id}/location', request, self._globals)
+        url = utils.generate_url(operations.GetLocationRequest, base_url, '/vehicles/{vehicle_id}/location', request)
         
         
         client = self._security_client
@@ -201,7 +257,8 @@ class Vehicles:
 
         return res
 
-    def get_odometer(self, request: operations.GetOdometerRequest) -> operations.GetOdometerResponse:
+    
+    def get_odometer(self, vehicle_id: str) -> operations.GetOdometerResponse:
         r"""Odometer
         __Description__
         
@@ -217,9 +274,13 @@ class Vehicles:
         |--|--|--|
         |`distance`|number|The current odometer of the vehicle (in kilometers by default or in miles using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
         """
+        request = operations.GetOdometerRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetOdometerRequest, base_url, '/vehicles/{vehicle_id}/odometer', request, self._globals)
+        url = utils.generate_url(operations.GetOdometerRequest, base_url, '/vehicles/{vehicle_id}/odometer', request)
         
         
         client = self._security_client
@@ -236,7 +297,8 @@ class Vehicles:
 
         return res
 
-    def get_permissions(self, request: operations.GetPermissionsRequest) -> operations.GetPermissionsResponse:
+    
+    def get_permissions(self, vehicle_id: str, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetPermissionsResponse:
         r"""Application Permissions
         __Description__
         
@@ -259,11 +321,17 @@ class Vehicles:
         |`paging.count`|integer|The total number of elements for the entire query (not just the given page).|
         |`paging.offset`|integer|The current start index of the returned list of elements.|
         """
+        request = operations.GetPermissionsRequest(
+            vehicle_id=vehicle_id,
+            limit=limit,
+            offset=offset,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetPermissionsRequest, base_url, '/vehicles/{vehicle_id}/permissions', request, self._globals)
+        url = utils.generate_url(operations.GetPermissionsRequest, base_url, '/vehicles/{vehicle_id}/permissions', request)
         
-        query_params = utils.get_query_params(operations.GetPermissionsRequest, request, self._globals)
+        query_params = utils.get_query_params(operations.GetPermissionsRequest, request)
         
         client = self._security_client
         
@@ -279,7 +347,8 @@ class Vehicles:
 
         return res
 
-    def get_tire_pressure(self, request: operations.GetTirePressureRequest) -> operations.GetTirePressureResponse:
+    
+    def get_tire_pressure(self, vehicle_id: str) -> operations.GetTirePressureResponse:
         r"""Tire pressure
         __Description__
         
@@ -297,9 +366,13 @@ class Vehicles:
         |`backLeft`|number|The current air pressure of the back left tire (in kilopascals by default or in pounds per square inch using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
         |`backRight`|number|The current air pressure of the back right tire (in kilopascals by default or in pounds per square inch using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers)).|
         """
+        request = operations.GetTirePressureRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetTirePressureRequest, base_url, '/vehicles/{vehicle_id}/tires/pressure', request, self._globals)
+        url = utils.generate_url(operations.GetTirePressureRequest, base_url, '/vehicles/{vehicle_id}/tires/pressure', request)
         
         
         client = self._security_client
@@ -316,7 +389,38 @@ class Vehicles:
 
         return res
 
-    def list_vehicles(self, request: operations.ListVehiclesRequest) -> operations.ListVehiclesResponse:
+    
+    def get_vin(self, vehicle_id: str) -> operations.GetVinResponse:
+        r"""Returns the vehicle’s manufacturer identifier.
+        __Description__
+        
+        Returns the vehicle’s manufacturer identifier.
+        """
+        request = operations.GetVinRequest(
+            vehicle_id=vehicle_id,
+        )
+        
+        base_url = self._server_url
+        
+        url = utils.generate_url(operations.GetVinRequest, base_url, '/vehicles/{vehicle_id}/vin', request)
+        
+        
+        client = self._security_client
+        
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetVinResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.VinInfo])
+                res.vin_info = out
+
+        return res
+
+    
+    def list_vehicles(self, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.ListVehiclesResponse:
         r"""All Vehicles
         __Description__
         
@@ -339,11 +443,16 @@ class Vehicles:
         |`paging.count`|integer|The total number of elements for the entire query (not just the given page).|
         |`paging.offset`|integer|The current start index of the returned list of elements.|
         """
+        request = operations.ListVehiclesRequest(
+            limit=limit,
+            offset=offset,
+        )
+        
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/vehicles'
         
-        query_params = utils.get_query_params(operations.ListVehiclesRequest, request, self._globals)
+        query_params = utils.get_query_params(operations.ListVehiclesRequest, request)
         
         client = self._security_client
         
@@ -359,8 +468,9 @@ class Vehicles:
 
         return res
 
-    def lock_unlock(self, request: operations.LockUnlockRequest) -> operations.LockUnlockResponse:
-        r"""Unlock Vehicle
+    
+    def lock_unlock(self, vehicle_id: str, security_action: Optional[shared.SecurityAction] = None) -> operations.LockUnlockResponse:
+        r"""Lock/Unlock Vehicle
         __Description__
         
         Unlock the vehicle
@@ -375,9 +485,14 @@ class Vehicles:
         |---	|---	|---	|
         |  status|   string|  If the request is successful, Smartcar will return “success” (HTTP 200 status).|
         """
+        request = operations.LockUnlockRequest(
+            vehicle_id=vehicle_id,
+            security_action=security_action,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.LockUnlockRequest, base_url, '/vehicles/{vehicle_id}/security', request, self._globals)
+        url = utils.generate_url(operations.LockUnlockRequest, base_url, '/vehicles/{vehicle_id}/security', request)
         
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "security_action", 'json')
@@ -393,8 +508,8 @@ class Vehicles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.SecurityResponse])
-                res.security_response = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.SuccessResponse])
+                res.success_response = out
 
         return res
 
