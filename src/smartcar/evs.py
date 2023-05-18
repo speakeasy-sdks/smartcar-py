@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from smartcar.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Evs:
     r"""Operations about electric vehicles"""
@@ -13,18 +13,17 @@ class Evs:
     _language: str
     _sdk_version: str
     _gen_version: str
-    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-        self._globals = gbls
         
-    def get_battery_capacity(self, request: operations.GetBatteryCapacityRequest) -> operations.GetBatteryCapacityResponse:
+    
+    def get_battery_capacity(self, vehicle_id: str) -> operations.GetBatteryCapacityResponse:
         r"""EV Battery Capacity
         __Description__
         
@@ -40,14 +39,19 @@ class Evs:
         |---	|---	|---	|
         |  capacity|   number|  The total capacity of the vehicle's battery (in kilowatt-hours). 	|
         """
+        request = operations.GetBatteryCapacityRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetBatteryCapacityRequest, base_url, '/vehicles/{vehicle_id}/battery/capacity', request, self._globals)
-        
+        url = utils.generate_url(operations.GetBatteryCapacityRequest, base_url, '/vehicles/{vehicle_id}/battery/capacity', request)
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetBatteryCapacityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -59,7 +63,8 @@ class Evs:
 
         return res
 
-    def get_battery_level(self, request: operations.GetBatteryLevelRequest) -> operations.GetBatteryLevelResponse:
+    
+    def get_battery_level(self, vehicle_id: str) -> operations.GetBatteryLevelResponse:
         r"""EV Battery Level
         __Description__
         
@@ -76,14 +81,19 @@ class Evs:
         |  `percentRemaining`|   number|  An EV battery’s state of charge (in percent). 	|
         |   `range`|   number	|   The estimated remaining distance the vehicle can travel (in kilometers by default or in miles using the [sc-unit-system](https://smartcar.com/docs/api?version=v2.0&language=cURL#request-headers).	|
         """
+        request = operations.GetBatteryLevelRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetBatteryLevelRequest, base_url, '/vehicles/{vehicle_id}/battery', request, self._globals)
-        
+        url = utils.generate_url(operations.GetBatteryLevelRequest, base_url, '/vehicles/{vehicle_id}/battery', request)
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetBatteryLevelResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -95,7 +105,39 @@ class Evs:
 
         return res
 
-    def get_charging_status(self, request: operations.GetChargingStatusRequest) -> operations.GetChargingStatusResponse:
+    
+    def get_charging_limit(self, vehicle_id: str) -> operations.GetChargingLimitResponse:
+        r"""EV Charging Limit
+        __Description__
+        
+        Returns the current charge limit of an electric vehicle.
+        """
+        request = operations.GetChargingLimitRequest(
+            vehicle_id=vehicle_id,
+        )
+        
+        base_url = self._server_url
+        
+        url = utils.generate_url(operations.GetChargingLimitRequest, base_url, '/vehicles/{vehicle_id}/charge/limit', request)
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
+        
+        client = self._security_client
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetChargingLimitResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ChargeLimit])
+                res.charge_limit = out
+
+        return res
+
+    
+    def get_charging_status(self, vehicle_id: str) -> operations.GetChargingStatusResponse:
         r"""EV Charging Status
         __Description__
         
@@ -112,14 +154,19 @@ class Evs:
         |  `isPluggedIn` 	|   boolean	|  Indicates whether a charging cable is currently plugged into the vehicle’s charge port. 	|
         |   `state`	|   string	|   Indicates whether the vehicle is currently charging. Options: `CHARGING` `FULLY_CHARGED` `NOT_CHARGING`	|
         """
+        request = operations.GetChargingStatusRequest(
+            vehicle_id=vehicle_id,
+        )
+        
         base_url = self._server_url
         
-        url = utils.generate_url(operations.GetChargingStatusRequest, base_url, '/vehicles/{vehicle_id}/charge', request, self._globals)
-        
+        url = utils.generate_url(operations.GetChargingStatusRequest, base_url, '/vehicles/{vehicle_id}/charge', request)
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetChargingStatusResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -128,6 +175,87 @@ class Evs:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ChargeStatus])
                 res.charge_status = out
+
+        return res
+
+    
+    def set_charging_limit(self, vehicle_id: str, charge_limit: Optional[shared.ChargeLimit] = None) -> operations.SetChargingLimitResponse:
+        r"""Set EV Charging Limit
+        __Description__
+        
+        Returns the current charge limit of an electric vehicle.
+        """
+        request = operations.SetChargingLimitRequest(
+            vehicle_id=vehicle_id,
+            charge_limit=charge_limit,
+        )
+        
+        base_url = self._server_url
+        
+        url = utils.generate_url(operations.SetChargingLimitRequest, base_url, '/vehicles/{vehicle_id}/charge/limit', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "charge_limit", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
+        
+        client = self._security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.SetChargingLimitResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.SuccessResponse])
+                res.success_response = out
+
+        return res
+
+    
+    def start_stop_charge(self, vehicle_id: str, charge_action: Optional[shared.ChargeAction] = None) -> operations.StartStopChargeResponse:
+        r"""Start or stop charging an electric vehicle. Please contact us to request early access.
+        __Description__
+        
+        Returns the current charge status of an electric vehicle.
+        
+        __Permission__
+        
+        `read_charge`
+        
+        __Response body__
+        
+        |  Name 	|Type   	|Boolean   	|
+        |---	|---	|---	|
+        |  `isPluggedIn` 	|   boolean	|  Indicates whether a charging cable is currently plugged into the vehicle’s charge port. 	|
+        |   `state`	|   string	|   Indicates whether the vehicle is currently charging. Options: `CHARGING` `FULLY_CHARGED` `NOT_CHARGING`	|
+        """
+        request = operations.StartStopChargeRequest(
+            vehicle_id=vehicle_id,
+            charge_action=charge_action,
+        )
+        
+        base_url = self._server_url
+        
+        url = utils.generate_url(operations.StartStopChargeRequest, base_url, '/vehicles/{vehicle_id}/charge', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "charge_action", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
+        
+        client = self._security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.StartStopChargeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.SuccessResponse])
+                res.success_response = out
 
         return res
 
