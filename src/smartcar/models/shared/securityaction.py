@@ -7,7 +7,7 @@ from enum import Enum
 from smartcar import utils
 from typing import Optional
 
-class SecurityActionActionEnum(str, Enum):
+class SecurityActionAction(str, Enum):
     LOCK = 'LOCK'
     UNLOCK = 'UNLOCK'
 
@@ -16,5 +16,5 @@ class SecurityActionActionEnum(str, Enum):
 @dataclasses.dataclass
 class SecurityAction:
     
-    action: Optional[SecurityActionActionEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action'), 'exclude': lambda f: f is None }})  
+    action: Optional[SecurityActionAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action'), 'exclude': lambda f: f is None }})
     
