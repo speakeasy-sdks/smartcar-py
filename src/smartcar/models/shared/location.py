@@ -11,6 +11,6 @@ from smartcar import utils
 class Location:
     r"""A list of vehicles"""
     
-    latitude: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latitude') }})  
-    longitude: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('longitude') }})  
+    latitude: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latitude') }})
+    longitude: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('longitude') }})
     
