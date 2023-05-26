@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from smartcar.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Compatibility:
     r"""Operations about compatibility"""
@@ -13,18 +13,17 @@ class Compatibility:
     _language: str
     _sdk_version: str
     _gen_version: str
-    _globals: dict[str, dict[str, dict[str, Any]]]
 
-    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str, gbls: dict[str, dict[str, dict[str, Any]]]) -> None:
+    def __init__(self, client: requests_http.Session, security_client: requests_http.Session, server_url: str, language: str, sdk_version: str, gen_version: str) -> None:
         self._client = client
         self._security_client = security_client
         self._server_url = server_url
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-        self._globals = gbls
         
-    def list_compatibility(self, request: operations.ListCompatibilityRequest) -> operations.ListCompatibilityResponse:
+    
+    def list_compatibility(self, country: Optional[str] = None, scope: Optional[str] = None, vin: Optional[str] = None) -> operations.ListCompatibilityResponse:
         r"""Compatibility
         In the US, compatibility will return a breakdown by scope of what a car is capable of. In Europe, the check is based on the make of the car so will return only a `true` or `false`
         
@@ -61,15 +60,23 @@ class Compatibility:
         |  capabilities[].reason|   VEHICLE_NOT_CAPABLE|  TThe vehicle does not support this feature.|
         |  |   SMARTCAR_NOT_CAPABLE|  Smartcar is not capable of supporting the given feature on the vehicle's make.|
         """
+        request = operations.ListCompatibilityRequest(
+            country=country,
+            scope=scope,
+            vin=vin,
+        )
+        
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/compatibility'
-        
-        query_params = utils.get_query_params(operations.ListCompatibilityRequest, request, self._globals)
+        headers = {}
+        query_params = utils.get_query_params(operations.ListCompatibilityRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListCompatibilityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
