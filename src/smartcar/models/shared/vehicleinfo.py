@@ -11,8 +11,8 @@ from smartcar import utils
 class VehicleInfo:
     r"""A single vehicles"""
     
-    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})  
-    make: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('make') }})  
-    model: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})  
-    year: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('year') }})  
+    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+    make: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('make') }})
+    model: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})
+    year: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('year') }})
     
