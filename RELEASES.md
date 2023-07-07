@@ -43,3 +43,9 @@ Based on:
 - Speakeasy CLI 1.22.1 (2.20.1) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v3.2.0] https://pypi.org/project/SmartCar/3.2.0 - .
+
+## 2023-07-07 01:18:51
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.53.0 (2.58.0) https://github.com/speakeasy-api/speakeasy
