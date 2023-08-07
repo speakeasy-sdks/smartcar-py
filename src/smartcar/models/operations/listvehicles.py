@@ -7,21 +7,24 @@ from ..shared import vehiclesresponse as shared_vehiclesresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ListVehiclesRequest:
-    
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
-    r"""Number of vehicles to return"""  
+    r"""Number of vehicles to return"""
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
-    r"""Index to start vehicle list at"""  
+    r"""Index to start vehicle list at"""
     
+
+
+
 
 @dataclasses.dataclass
 class ListVehiclesResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     vehicles_response: Optional[shared_vehiclesresponse.VehiclesResponse] = dataclasses.field(default=None)
-    r"""A list of vehicles"""  
+    r"""A list of vehicles"""
     
+
