@@ -8,12 +8,12 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class BatteryLevel:
-    r"""return EV Battery Level reading"""
-    
     percent_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('percentRemaining'), 'exclude': lambda f: f is None }})
-    r"""An EV battery’s state of charge (in percent)."""  
+    r"""An EV battery’s state of charge (in percent)."""
     range: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range'), 'exclude': lambda f: f is None }})
-    r"""The estimated remaining distance the vehicle can travel (in kilometers by default or in miles using the sc-unit-system)."""  
+    r"""The estimated remaining distance the vehicle can travel (in kilometers by default or in miles using the sc-unit-system)."""
     
+
