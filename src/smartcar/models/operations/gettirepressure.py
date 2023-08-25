@@ -7,18 +7,21 @@ from ..shared import tirepressure as shared_tirepressure
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetTirePressureRequest:
+    vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-    vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class GetTirePressureResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     tire_pressure: Optional[shared_tirepressure.TirePressure] = dataclasses.field(default=None)
-    r"""return Pressure reading"""  
+    r"""return Pressure reading"""
     
+
