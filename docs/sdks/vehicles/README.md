@@ -42,9 +42,6 @@ s = smartcar.Smartcar(
 
 res = s.vehicles.batch(vehicle_id='nisi', request_body=[
     '/odometer',
-    '/odometer',
-    '/odometer',
-    '/odometer',
 ])
 
 if res.batch_response is not None:
@@ -92,7 +89,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.disconnect(vehicle_id='temporibus')
+res = s.vehicles.disconnect(vehicle_id='recusandae')
 
 if res.status is not None:
     # handle response
@@ -145,7 +142,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get(vehicle_id='ab')
+res = s.vehicles.get(vehicle_id='temporibus')
 
 if res.vehicle_info is not None:
     # handle response
@@ -195,7 +192,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_engine_oil(vehicle_id='quis')
+res = s.vehicles.get_engine_oil(vehicle_id='ab')
 
 if res.engine_oil is not None:
     # handle response
@@ -247,7 +244,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_fuel_tank(vehicle_id='veritatis')
+res = s.vehicles.get_fuel_tank(vehicle_id='quis')
 
 if res.fuel_tank is not None:
     # handle response
@@ -348,7 +345,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_odometer(vehicle_id='deserunt')
+res = s.vehicles.get_odometer(vehicle_id='veritatis')
 
 if res.odometer is not None:
     # handle response
@@ -405,7 +402,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_permissions(vehicle_id='perferendis', limit=368241, offset=832620)
+res = s.vehicles.get_permissions(vehicle_id='deserunt', limit=20218, offset=368241)
 
 if res.permission is not None:
     # handle response
@@ -459,7 +456,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_tire_pressure(vehicle_id='sapiente')
+res = s.vehicles.get_tire_pressure(vehicle_id='repellendus')
 
 if res.tire_pressure is not None:
     # handle response
@@ -499,7 +496,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_vin(vehicle_id='quo')
+res = s.vehicles.get_vin(vehicle_id='sapiente')
 
 if res.vin_info is not None:
     # handle response
@@ -537,7 +534,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_vehicles_vehicle_id_security(vehicle_id='odit')
+res = s.vehicles.get_vehicles_vehicle_id_security(vehicle_id='quo')
 
 if res.security_read is not None:
     # handle response
@@ -594,7 +591,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.list_vehicles(limit=870013, offset=870088)
+res = s.vehicles.list_vehicles(limit=140350, offset=870013)
 
 if res.vehicles_response is not None:
     # handle response
@@ -645,7 +642,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.lock_unlock(vehicle_id='maiores', security_action=shared.SecurityAction(
+res = s.vehicles.lock_unlock(vehicle_id='at', security_action=shared.SecurityAction(
     action=shared.SecurityActionAction.UNLOCK,
 ))
 
