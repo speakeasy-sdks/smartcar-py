@@ -21,7 +21,6 @@ class VehiclesResponsePaging:
 
 @dataclasses.dataclass
 class VehiclesResponse:
-    r"""A list of vehicles"""
     paging: Optional[VehiclesResponsePaging] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paging'), 'exclude': lambda f: f is None }})
     vehicles: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('vehicles'), 'exclude': lambda f: f is None }})
     

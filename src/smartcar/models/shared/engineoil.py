@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class EngineOil:
-    r"""return engine oil reading"""
     life_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lifeRemaining'), 'exclude': lambda f: f is None }})
     r"""The engine oil’s remaining life span (as a percentage). Oil life is based on the current quality of the oil. (in percent)."""
     

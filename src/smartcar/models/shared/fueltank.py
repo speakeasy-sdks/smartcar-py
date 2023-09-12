@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class FuelTank:
-    r"""return fuel tank reading"""
     amount_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amountRemaining'), 'exclude': lambda f: f is None }})
     r"""The amount of fuel in the tank (in liters by default or in gallons (U.S.) using the sc-unit-system)."""
     percent_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('percentRemaining'), 'exclude': lambda f: f is None }})

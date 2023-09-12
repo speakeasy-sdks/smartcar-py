@@ -16,7 +16,6 @@ class SuccessResponseStatus(str, Enum):
 
 @dataclasses.dataclass
 class SuccessResponse:
-    r"""return Success Response"""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     status: Optional[SuccessResponseStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     

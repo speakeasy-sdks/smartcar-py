@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class TirePressure:
-    r"""return Pressure reading"""
     back_left: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('backLeft'), 'exclude': lambda f: f is None }})
     r"""The current air pressure of the back left tire (in kilopascals by default or in pounds per square inch using the sc-unit-system)."""
     back_right: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('backRight'), 'exclude': lambda f: f is None }})

@@ -109,7 +109,6 @@ class SecurityReadWindows:
 
 @dataclasses.dataclass
 class SecurityRead:
-    r"""Returns the lock status for a vehicle and the open status of its doors, windows, storage units, sunroof and charging port where available."""
     charging_port: Optional[list[SecurityReadChargingPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chargingPort'), 'exclude': lambda f: f is None }})
     doors: Optional[list[SecurityReadDoors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doors'), 'exclude': lambda f: f is None }})
     is_locked: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isLocked'), 'exclude': lambda f: f is None }})

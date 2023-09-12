@@ -21,7 +21,6 @@ class PermissionPaging:
 
 @dataclasses.dataclass
 class Permission:
-    r"""The applications permissions"""
     paging: Optional[PermissionPaging] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paging'), 'exclude': lambda f: f is None }})
     permissions: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('permissions'), 'exclude': lambda f: f is None }})
     

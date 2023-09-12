@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class Speed:
-    r"""returns the speed of a Tesla."""
     speed: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('speed'), 'exclude': lambda f: f is None }})
     
 

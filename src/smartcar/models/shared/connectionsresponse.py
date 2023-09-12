@@ -13,7 +13,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class ConnectionsResponse:
-    r"""returns vehicle connections"""
     connections: Optional[list[shared_getconnection.GetConnection]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connections'), 'exclude': lambda f: f is None }})
     paging: Optional[shared_cursorpaging.CursorPaging] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paging'), 'exclude': lambda f: f is None }})
     

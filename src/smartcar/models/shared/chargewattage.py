@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class ChargeWattage:
-    r"""returns the wattage of the charger measured by the vehicle."""
     wattage: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wattage'), 'exclude': lambda f: f is None }})
     r"""The wattage of the charger measured by the vehicle."""
     

@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class BatchResponse:
-    r"""A list of responses from multiple Smartcar endpoints"""
     responses: Optional[list[shared_response.Response]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('responses'), 'exclude': lambda f: f is None }})
     
 
