@@ -45,21 +45,21 @@ if res.location is not None:
 ## Available Resources and Operations
 
 
-### [cadillac](docs/sdks/cadillac/README.md)
+### [Cadillac](docs/sdks/cadillac/README.md)
 
 * [get_charge_time](docs/sdks/cadillac/README.md#get_charge_time) - Retrieve charging completion time for a Cadillac.
 * [get_voltage](docs/sdks/cadillac/README.md#get_voltage) - Retrieve charging voltmeter time for a Cadillac.
 
-### [chevrolet](docs/sdks/chevrolet/README.md)
+### [Chevrolet](docs/sdks/chevrolet/README.md)
 
 * [get_charge_time](docs/sdks/chevrolet/README.md#get_charge_time) - Retrieve charging completion time for a Chevrolet.
 * [get_voltage](docs/sdks/chevrolet/README.md#get_voltage) - Retrieve charging voltmeter time for a Chevrolet.
 
-### [compatibility](docs/sdks/compatibility/README.md)
+### [Compatibility](docs/sdks/compatibility/README.md)
 
 * [list_compatibility](docs/sdks/compatibility/README.md#list_compatibility) - Compatibility
 
-### [evs](docs/sdks/evs/README.md)
+### [Evs](docs/sdks/evs/README.md)
 
 * [get_battery_capacity](docs/sdks/evs/README.md#get_battery_capacity) - EV Battery Capacity
 * [get_battery_level](docs/sdks/evs/README.md#get_battery_level) - EV Battery Level
@@ -68,7 +68,7 @@ if res.location is not None:
 * [set_charging_limit](docs/sdks/evs/README.md#set_charging_limit) - Set EV Charging Limit
 * [start_stop_charge](docs/sdks/evs/README.md#start_stop_charge) - Start or stop charging an electric vehicle.
 
-### [tesla](docs/sdks/tesla/README.md)
+### [Tesla](docs/sdks/tesla/README.md)
 
 * [get_ammeter](docs/sdks/tesla/README.md#get_ammeter) - Retrieve charging ammeter time for a Tesla.
 * [get_charge_time](docs/sdks/tesla/README.md#get_charge_time) - Retrieve charging completion time for a Tesla.
@@ -80,16 +80,16 @@ if res.location is not None:
 * [get_wattmeter](docs/sdks/tesla/README.md#get_wattmeter) - Retrieve charging wattmeter time for a Tesla.
 * [set_ammeter](docs/sdks/tesla/README.md#set_ammeter) - Set charging ammeter time for a Tesla.
 
-### [user](docs/sdks/user/README.md)
+### [User](docs/sdks/user/README.md)
 
 * [get_info](docs/sdks/user/README.md#get_info) - User Info
 
-### [vehicle_management](docs/sdks/vehiclemanagement/README.md)
+### [VehicleManagement](docs/sdks/vehiclemanagement/README.md)
 
 * [delete_management_vehicle_connections](docs/sdks/vehiclemanagement/README.md#delete_management_vehicle_connections) - Delete vehicle connections by user_id or vehicle_id
 * [get_management_vehicle_connections](docs/sdks/vehiclemanagement/README.md#get_management_vehicle_connections) - Retrieve vehicle connections
 
-### [vehicles](docs/sdks/vehicles/README.md)
+### [Vehicles](docs/sdks/vehicles/README.md)
 
 * [batch](docs/sdks/vehicles/README.md#batch) - Batch
 * [disconnect](docs/sdks/vehicles/README.md#disconnect) - Revoke Access
@@ -105,7 +105,7 @@ if res.location is not None:
 * [list_vehicles](docs/sdks/vehicles/README.md#list_vehicles) - All Vehicles
 * [lock_unlock](docs/sdks/vehicles/README.md#lock_unlock) - Lock/Unlock Vehicle
 
-### [webhooks](docs/sdks/webhooks/README.md)
+### [Webhooks](docs/sdks/webhooks/README.md)
 
 * [subscribe](docs/sdks/webhooks/README.md#subscribe) - Subscribe Webhook
 * [unsubscribe](docs/sdks/webhooks/README.md#unsubscribe) - Unsubscribe Webhook
