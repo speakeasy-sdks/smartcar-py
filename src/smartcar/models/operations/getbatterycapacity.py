@@ -19,9 +19,12 @@ class GetBatteryCapacityRequest:
 @dataclasses.dataclass
 class GetBatteryCapacityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     battery_capacity: Optional[shared_batterycapacity.BatteryCapacity] = dataclasses.field(default=None)
     r"""return EV Battery Capacity reading"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

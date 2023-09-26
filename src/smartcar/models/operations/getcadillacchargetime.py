@@ -19,9 +19,12 @@ class GetCadillacChargeTimeRequest:
 @dataclasses.dataclass
 class GetCadillacChargeTimeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     charge_time: Optional[shared_chargetime.ChargeTime] = dataclasses.field(default=None)
     r"""returns the date and time the vehicle expects to \\"complete\\" this charging session."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

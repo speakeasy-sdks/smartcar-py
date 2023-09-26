@@ -36,9 +36,12 @@ class DeleteManagementVehicleConnectionsRequest:
 @dataclasses.dataclass
 class DeleteManagementVehicleConnectionsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     deleted_connections_response: Optional[list[shared_deletedconnection.DeletedConnection]] = dataclasses.field(default=None)
     r"""returns all deleted connections"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

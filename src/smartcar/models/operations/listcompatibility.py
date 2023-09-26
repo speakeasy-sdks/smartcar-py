@@ -21,9 +21,12 @@ class ListCompatibilityRequest:
 @dataclasses.dataclass
 class ListCompatibilityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     compatibility_response: Optional[shared_compatibilityresponse.CompatibilityResponse] = dataclasses.field(default=None)
     r"""return Compatibility"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

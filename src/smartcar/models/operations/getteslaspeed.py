@@ -19,8 +19,11 @@ class GetTeslaSpeedRequest:
 @dataclasses.dataclass
 class GetTeslaSpeedResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     speed: Optional[shared_speed.Speed] = dataclasses.field(default=None)
     r"""returns the speed of a Tesla."""
     

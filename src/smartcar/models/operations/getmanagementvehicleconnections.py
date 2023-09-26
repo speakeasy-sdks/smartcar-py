@@ -40,9 +40,12 @@ class GetManagementVehicleConnectionsRequest:
 @dataclasses.dataclass
 class GetManagementVehicleConnectionsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     connections_response: Optional[shared_connectionsresponse.ConnectionsResponse] = dataclasses.field(default=None)
     r"""returns vehicle connections"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

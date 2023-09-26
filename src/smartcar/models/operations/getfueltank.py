@@ -19,9 +19,12 @@ class GetFuelTankRequest:
 @dataclasses.dataclass
 class GetFuelTankResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     fuel_tank: Optional[shared_fueltank.FuelTank] = dataclasses.field(default=None)
     r"""return fuel tank reading"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
