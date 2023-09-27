@@ -2,11 +2,33 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import batterycapacity as shared_batterycapacity
+from ..shared import batterylevel as shared_batterylevel
+from ..shared import chargelimit as shared_chargelimit
+from ..shared import chargestatus as shared_chargestatus
+from ..shared import chargetime as shared_chargetime
+from ..shared import chargevoltage as shared_chargevoltage
+from ..shared import compatibilityresponse as shared_compatibilityresponse
+from ..shared import engineoil as shared_engineoil
+from ..shared import fueltank as shared_fueltank
 from ..shared import header as shared_header
+from ..shared import location as shared_location
+from ..shared import odometer as shared_odometer
+from ..shared import securityread as shared_securityread
+from ..shared import successresponse as shared_successresponse
+from ..shared import tirepressure as shared_tirepressure
+from ..shared import userinfo as shared_userinfo
+from ..shared import vininfo as shared_vininfo
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from smartcar import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+
+@dataclasses.dataclass
+class ResponseBody:
+    pass
 
 class ResponseCode(str, Enum):
     TWO_HUNDRED = '200'
@@ -17,7 +39,7 @@ class ResponseCode(str, Enum):
 
 @dataclasses.dataclass
 class Response:
-    body: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body'), 'exclude': lambda f: f is None }})
+    body: Optional[Union[shared_location.Location, shared_odometer.Odometer, shared_fueltank.FuelTank, shared_tirepressure.TirePressure, shared_engineoil.EngineOil, shared_chargestatus.ChargeStatus, shared_chargelimit.ChargeLimit, shared_chargetime.ChargeTime, shared_chargevoltage.ChargeVoltage, shared_batterylevel.BatteryLevel, shared_batterycapacity.BatteryCapacity, shared_compatibilityresponse.CompatibilityResponse, shared_vininfo.VinInfo, shared_userinfo.UserInfo, shared_successresponse.SuccessResponse, shared_securityread.SecurityRead]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body'), 'exclude': lambda f: f is None }})
     code: Optional[ResponseCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     headers: Optional[list[shared_header.Header]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})

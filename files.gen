@@ -198,6 +198,7 @@ docs/models/shared/connectionsresponse.md
 docs/models/shared/cursorpaging.md
 docs/models/shared/getconnection.md
 docs/models/shared/batchresponse.md
+docs/models/shared/responsebody.md
 docs/models/shared/responsecode.md
 docs/models/shared/response.md
 docs/models/shared/header.md
