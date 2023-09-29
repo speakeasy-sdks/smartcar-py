@@ -27,7 +27,7 @@ class Chevrolet:
         url = utils.generate_url(operations.GetChevroletChargeTimeRequest, base_url, '/vehicles/{vehicle_id}/chevrolet/charge/completion', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -63,7 +63,7 @@ class Chevrolet:
         url = utils.generate_url(operations.GetChevroletVoltageRequest, base_url, '/vehicles/{vehicle_id}/chevrolet/charge/voltmeter', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

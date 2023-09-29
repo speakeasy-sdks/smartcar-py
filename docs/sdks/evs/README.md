@@ -46,7 +46,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.evs.get_battery_capacity(vehicle_id='unde')
+res = s.evs.get_battery_capacity(vehicle_id='Crew')
 
 if res.battery_capacity is not None:
     # handle response
@@ -97,7 +97,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.evs.get_battery_level(vehicle_id='nulla')
+res = s.evs.get_battery_level(vehicle_id='Movies')
 
 if res.battery_level is not None:
     # handle response
@@ -137,7 +137,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.evs.get_charging_limit(vehicle_id='corrupti')
+res = s.evs.get_charging_limit(vehicle_id='vertical')
 
 if res.charge_limit is not None:
     # handle response
@@ -188,7 +188,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.evs.get_charging_status(vehicle_id='illum')
+res = s.evs.get_charging_status(vehicle_id='Health')
 
 if res.charge_status is not None:
     # handle response
@@ -228,7 +228,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.evs.set_charging_limit(vehicle_id='vel', charge_limit=shared.ChargeLimit(
+res = s.evs.set_charging_limit(vehicle_id='dynamic', charge_limit=shared.ChargeLimit(
     limit=1,
 ))
 
@@ -282,7 +282,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.evs.start_stop_charge(vehicle_id='error', charge_action=shared.ChargeAction(
+res = s.evs.start_stop_charge(vehicle_id='beside', charge_action=shared.ChargeAction(
     action=shared.ChargeActionAction.START,
 ))
 

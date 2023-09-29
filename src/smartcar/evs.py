@@ -38,7 +38,7 @@ class Evs:
         url = utils.generate_url(operations.GetBatteryCapacityRequest, base_url, '/vehicles/{vehicle_id}/battery/capacity', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -85,7 +85,7 @@ class Evs:
         url = utils.generate_url(operations.GetBatteryLevelRequest, base_url, '/vehicles/{vehicle_id}/battery', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -121,7 +121,7 @@ class Evs:
         url = utils.generate_url(operations.GetChargingLimitRequest, base_url, '/vehicles/{vehicle_id}/charge/limit', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -168,7 +168,7 @@ class Evs:
         url = utils.generate_url(operations.GetChargingStatusRequest, base_url, '/vehicles/{vehicle_id}/charge', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -204,11 +204,11 @@ class Evs:
         
         url = utils.generate_url(operations.SetChargingLimitRequest, base_url, '/vehicles/{vehicle_id}/charge/limit', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "charge_limit", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "charge_limit", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -255,11 +255,11 @@ class Evs:
         
         url = utils.generate_url(operations.StartStopChargeRequest, base_url, '/vehicles/{vehicle_id}/charge', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "charge_action", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "charge_action", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

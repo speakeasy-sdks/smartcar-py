@@ -27,7 +27,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaAmmeterRequest, base_url, '/vehicles/{vehicle_id}/tesla/charge/ammeter', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -63,7 +63,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaChargeTimeRequest, base_url, '/vehicles/{vehicle_id}/tesla/charge/completion', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -99,7 +99,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaCompassRequest, base_url, '/vehicles/{vehicle_id}/tesla/compass', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -135,7 +135,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaExteriorTemperatureRequest, base_url, '/vehicles/{id}/tesla/thermometer/exterior', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -171,7 +171,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaInteriorTemperatureRequest, base_url, '/vehicles/{id}/tesla/thermometer/interior', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -207,7 +207,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaSpeedRequest, base_url, '/vehicles/{vehicle_id}/tesla/speedometer', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -243,7 +243,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaVoltageRequest, base_url, '/vehicles/{vehicle_id}/tesla/charge/voltmeter', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -279,7 +279,7 @@ class Tesla:
         url = utils.generate_url(operations.GetTeslaWattmeterRequest, base_url, '/vehicles/{vehicle_id}/tesla/charge/wattmeter', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -315,11 +315,11 @@ class Tesla:
         
         url = utils.generate_url(operations.SetTeslaAmmeterRequest, base_url, '/vehicles/{vehicle_id}/tesla/charge/ammeter', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "charge_ammeter", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "charge_ammeter", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
