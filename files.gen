@@ -145,6 +145,7 @@ docs/models/operations/getmanagementvehicleconnectionsresponse.md
 docs/models/operations/batchrequest.md
 docs/models/operations/batchresponse.md
 docs/models/operations/disconnectrequest.md
+docs/models/operations/disconnectstatus.md
 docs/models/operations/disconnectresponse.md
 docs/models/operations/getvehiclerequest.md
 docs/models/operations/getvehicleresponse.md
@@ -208,6 +209,7 @@ docs/models/shared/tirepressure.md
 docs/models/shared/engineoil.md
 docs/models/shared/vininfo.md
 docs/models/shared/securityreadchargingportstatus.md
+docs/models/shared/securityreadchargingporttype.md
 docs/models/shared/securityreadchargingport.md
 docs/models/shared/securityreaddoorsstatus.md
 docs/models/shared/securityreaddoorstype.md
@@ -216,6 +218,7 @@ docs/models/shared/securityreadstoragestatus.md
 docs/models/shared/securityreadstoragetype.md
 docs/models/shared/securityreadstorage.md
 docs/models/shared/securityreadsunroofstatus.md
+docs/models/shared/securityreadsunrooftype.md
 docs/models/shared/securityreadsunroof.md
 docs/models/shared/securityreadwindowsstatus.md
 docs/models/shared/securityreadwindowstype.md

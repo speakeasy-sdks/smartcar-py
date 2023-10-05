@@ -5,12 +5,15 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from smartcar import utils
-from typing import Final, Optional
+from typing import Optional
 
 class SecurityReadChargingPortStatus(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
+
+class SecurityReadChargingPortType(str, Enum):
+    CHARGING_PORT = 'chargingPort'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -18,7 +21,7 @@ class SecurityReadChargingPortStatus(str, Enum):
 @dataclasses.dataclass
 class SecurityReadChargingPort:
     status: Optional[SecurityReadChargingPortStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    TYPE: Final[Optional[str]] = dataclasses.field(default='chargingPort', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[SecurityReadChargingPortType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
@@ -67,13 +70,16 @@ class SecurityReadSunroofStatus(str, Enum):
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
 
+class SecurityReadSunroofType(str, Enum):
+    SUNROOF = 'sunroof'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class SecurityReadSunroof:
     status: Optional[SecurityReadSunroofStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    TYPE: Final[Optional[str]] = dataclasses.field(default='sunroof', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[SecurityReadSunroofType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 

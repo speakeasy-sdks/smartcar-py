@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from enum import Enum
 from typing import Optional
 
 
@@ -12,6 +13,10 @@ class DisconnectRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
 
+
+class DisconnectStatus(str, Enum):
+    r"""Revoke application access"""
+    SUCCESS = 'success'
 
 
 
@@ -23,7 +28,7 @@ class DisconnectResponse:
     r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    status: Optional[str] = dataclasses.field(default=None)
+    status: Optional[DisconnectStatus] = dataclasses.field(default=None)
     r"""Revoke application access"""
     
 

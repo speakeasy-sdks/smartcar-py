@@ -83,7 +83,8 @@ class Vehicles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                res.status = http_res.content
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DisconnectStatus])
+                res.status = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
