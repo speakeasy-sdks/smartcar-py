@@ -1,0 +1,9 @@
+# SecurityReadChargingPort
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `status`                                                                                                     | [Optional[shared.SecurityReadChargingPortStatus]](undefined/models/shared/securityreadchargingportstatus.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `type`                                                                                                       | [Optional[shared.SecurityReadChargingPortType]](undefined/models/shared/securityreadchargingporttype.md)     | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |

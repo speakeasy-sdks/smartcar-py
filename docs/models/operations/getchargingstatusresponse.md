@@ -1,0 +1,11 @@
+# GetChargingStatusResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `charge_status`                                                                       | [Optional[shared.ChargeStatus]](undefined/models/shared/chargestatus.md)              | :heavy_minus_sign:                                                                    | return EV Charge reading                                                              |
+| `content_type`                                                                        | *Optional[str]*                                                                       | :heavy_check_mark:                                                                    | HTTP response content type for this operation                                         |
+| `status_code`                                                                         | *Optional[int]*                                                                       | :heavy_check_mark:                                                                    | HTTP response status code for this operation                                          |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | Raw HTTP response; suitable for custom response parsing                               |

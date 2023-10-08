@@ -1,0 +1,9 @@
+# SecurityReadWindows
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `status`                                                                                           | [Optional[shared.SecurityReadWindowsStatus]](undefined/models/shared/securityreadwindowsstatus.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `type`                                                                                             | [Optional[shared.SecurityReadWindowsType]](undefined/models/shared/securityreadwindowstype.md)     | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

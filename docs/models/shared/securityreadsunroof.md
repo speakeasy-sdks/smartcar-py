@@ -1,0 +1,9 @@
+# SecurityReadSunroof
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `status`                                                                                           | [Optional[shared.SecurityReadSunroofStatus]](undefined/models/shared/securityreadsunroofstatus.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `type`                                                                                             | [Optional[shared.SecurityReadSunroofType]](undefined/models/shared/securityreadsunrooftype.md)     | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

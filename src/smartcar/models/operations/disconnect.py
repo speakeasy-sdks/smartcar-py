@@ -7,22 +7,28 @@ from enum import Enum
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DisconnectRequest:
+    vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-    vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
-    
-class DisconnectStatusEnum(str, Enum):
+
+
+class DisconnectStatus(str, Enum):
     r"""Revoke application access"""
     SUCCESS = 'success'
 
 
+
 @dataclasses.dataclass
 class DisconnectResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    status: Optional[DisconnectStatus] = dataclasses.field(default=None)
+    r"""Revoke application access"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    status: Optional[DisconnectStatusEnum] = dataclasses.field(default=None)
-    r"""Revoke application access"""  
-    
+

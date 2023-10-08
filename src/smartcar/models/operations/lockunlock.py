@@ -4,23 +4,29 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import securityaction as shared_securityaction
-from ..shared import securityresponse as shared_securityresponse
+from ..shared import successresponse as shared_successresponse
 from typing import Optional
+
 
 
 @dataclasses.dataclass
 class LockUnlockRequest:
+    vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
+    security_action: Optional[shared_securityaction.SecurityAction] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-    security_action: Optional[shared_securityaction.SecurityAction] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
-    vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class LockUnlockResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    success_response: Optional[shared_successresponse.SuccessResponse] = dataclasses.field(default=None)
+    r"""return Compatibility"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    security_response: Optional[shared_securityresponse.SecurityResponse] = dataclasses.field(default=None)
-    r"""return Compatibility"""  
-    
+

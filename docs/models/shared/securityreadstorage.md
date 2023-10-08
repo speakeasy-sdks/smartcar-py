@@ -1,0 +1,9 @@
+# SecurityReadStorage
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `status`                                                                                           | [Optional[shared.SecurityReadStorageStatus]](undefined/models/shared/securityreadstoragestatus.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `type`                                                                                             | [Optional[shared.SecurityReadStorageType]](undefined/models/shared/securityreadstoragetype.md)     | :heavy_minus_sign:                                                                                 | N/A                                                                                                |

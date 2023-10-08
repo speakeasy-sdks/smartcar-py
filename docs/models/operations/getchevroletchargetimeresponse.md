@@ -1,0 +1,11 @@
+# GetChevroletChargeTimeResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `charge_time`                                                                         | [Optional[shared.ChargeTime]](undefined/models/shared/chargetime.md)                  | :heavy_minus_sign:                                                                    | returns the date and time the vehicle expects to "complete" this charging session.    |
+| `content_type`                                                                        | *Optional[str]*                                                                       | :heavy_check_mark:                                                                    | HTTP response content type for this operation                                         |
+| `status_code`                                                                         | *Optional[int]*                                                                       | :heavy_check_mark:                                                                    | HTTP response status code for this operation                                          |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | Raw HTTP response; suitable for custom response parsing                               |
