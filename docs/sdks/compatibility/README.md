@@ -66,6 +66,7 @@ res = s.compatibility.list_compatibility(country='{country}', scope='{scope}', v
 
 if res.compatibility_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

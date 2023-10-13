@@ -5,4 +5,4 @@
 
 | Field                                | Type                                 | Required                             | Description                          | Example                              |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| `vehicle_id`                         | *Optional[str]*                      | :heavy_check_mark:                   | N/A                                  | 36ab27d0-fd9d-4455-823a-ce30af709ffc |
+| `vehicle_id`                         | *str*                                | :heavy_check_mark:                   | N/A                                  | 36ab27d0-fd9d-4455-823a-ce30af709ffc |

@@ -19,5 +19,6 @@ res = s.vehicles.get_location(vehicle_id='36ab27d0-fd9d-4455-823a-ce30af709ffc')
 
 if res.location is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

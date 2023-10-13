@@ -50,6 +50,7 @@ res = s.evs.get_battery_capacity(vehicle_id='Crew')
 
 if res.battery_capacity is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -101,6 +102,7 @@ res = s.evs.get_battery_level(vehicle_id='Movies')
 
 if res.battery_level is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -141,6 +143,7 @@ res = s.evs.get_charging_limit(vehicle_id='vertical')
 
 if res.charge_limit is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -192,6 +195,7 @@ res = s.evs.get_charging_status(vehicle_id='Health')
 
 if res.charge_status is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -234,6 +238,7 @@ res = s.evs.set_charging_limit(vehicle_id='dynamic', charge_limit=shared.ChargeL
 
 if res.success_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -288,6 +293,7 @@ res = s.evs.start_stop_charge(vehicle_id='beside', charge_action=shared.ChargeAc
 
 if res.success_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

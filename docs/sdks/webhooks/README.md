@@ -45,6 +45,7 @@ res = s.webhooks.subscribe(vehicle_id='Chicken', webhook_id='Cedi', webhook_info
 
 if res.success_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -97,6 +98,7 @@ res = s.webhooks.unsubscribe(vehicle_id='deposit', webhook_id='royal')
 
 if res.success_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

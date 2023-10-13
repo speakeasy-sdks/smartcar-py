@@ -47,6 +47,7 @@ res = s.vehicles.batch(vehicle_id='fuchsia', request_body=[
 
 if res.batch_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -94,6 +95,7 @@ res = s.vehicles.disconnect(vehicle_id='Creative')
 
 if res.status is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -147,6 +149,7 @@ res = s.vehicles.get(vehicle_id='female')
 
 if res.vehicle_info is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -197,6 +200,7 @@ res = s.vehicles.get_engine_oil(vehicle_id='Games')
 
 if res.engine_oil is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -249,6 +253,7 @@ res = s.vehicles.get_fuel_tank(vehicle_id='blue')
 
 if res.fuel_tank is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -300,6 +305,7 @@ res = s.vehicles.get_location(vehicle_id='36ab27d0-fd9d-4455-823a-ce30af709ffc')
 
 if res.location is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -350,6 +356,7 @@ res = s.vehicles.get_odometer(vehicle_id='chomp')
 
 if res.odometer is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -407,6 +414,7 @@ res = s.vehicles.get_permissions(vehicle_id='Hybrid', limit=244593, offset=52847
 
 if res.permission is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -461,6 +469,7 @@ res = s.vehicles.get_tire_pressure(vehicle_id='deposit')
 
 if res.tire_pressure is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -501,6 +510,7 @@ res = s.vehicles.get_vin(vehicle_id='invoice')
 
 if res.vin_info is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -539,6 +549,7 @@ res = s.vehicles.get_vehicles_vehicle_id_security(vehicle_id='maroon')
 
 if res.security_read is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -596,6 +607,7 @@ res = s.vehicles.list_vehicles(limit=568500, offset=311354)
 
 if res.vehicles_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -649,6 +661,7 @@ res = s.vehicles.lock_unlock(vehicle_id='maximized', security_action=shared.Secu
 
 if res.success_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

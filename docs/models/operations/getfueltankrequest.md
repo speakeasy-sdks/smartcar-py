@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `vehicle_id`       | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `vehicle_id`       | *str*              | :heavy_check_mark: | N/A                |
