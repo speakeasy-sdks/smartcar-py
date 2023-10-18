@@ -7,7 +7,6 @@ from enum import Enum
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DisconnectRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
@@ -17,7 +16,6 @@ class DisconnectRequest:
 class DisconnectStatus(str, Enum):
     r"""Revoke application access"""
     SUCCESS = 'success'
-
 
 
 @dataclasses.dataclass

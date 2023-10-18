@@ -7,12 +7,10 @@ from ..shared import tirepressure as shared_tirepressure
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetTirePressureRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

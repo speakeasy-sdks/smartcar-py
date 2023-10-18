@@ -7,12 +7,10 @@ from ..shared import compass as shared_compass
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetTeslaCompassRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

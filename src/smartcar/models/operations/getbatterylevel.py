@@ -7,12 +7,10 @@ from ..shared import batterylevel as shared_batterylevel
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetBatteryLevelRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -7,12 +7,10 @@ from ..shared import engineoil as shared_engineoil
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetEngineOilRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

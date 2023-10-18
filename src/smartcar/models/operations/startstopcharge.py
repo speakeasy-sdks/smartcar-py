@@ -8,13 +8,11 @@ from ..shared import successresponse as shared_successresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class StartStopChargeRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     charge_action: Optional[shared_chargeaction.ChargeAction] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

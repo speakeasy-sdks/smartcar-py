@@ -7,12 +7,10 @@ from ..shared import fueltank as shared_fueltank
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetFuelTankRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

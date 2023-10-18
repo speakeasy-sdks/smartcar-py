@@ -7,14 +7,12 @@ from ..shared import compatibilityresponse as shared_compatibilityresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListCompatibilityRequest:
     country: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'country', 'style': 'form', 'explode': True }})
     scope: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'scope', 'style': 'form', 'explode': True }})
     vin: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'vin', 'style': 'form', 'explode': True }})
     
-
 
 
 

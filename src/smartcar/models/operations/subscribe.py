@@ -8,14 +8,12 @@ from ..shared import webhookinfo as shared_webhookinfo
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SubscribeRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     webhook_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'webhookId', 'style': 'simple', 'explode': False }})
     webhook_info: Optional[shared_webhookinfo.WebhookInfo] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

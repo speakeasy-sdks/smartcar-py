@@ -7,12 +7,10 @@ from ..shared import chargeammeter as shared_chargeammeter
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetTeslaAmmeterRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

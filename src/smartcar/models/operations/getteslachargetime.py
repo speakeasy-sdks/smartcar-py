@@ -7,12 +7,10 @@ from ..shared import chargetime as shared_chargetime
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetTeslaChargeTimeRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

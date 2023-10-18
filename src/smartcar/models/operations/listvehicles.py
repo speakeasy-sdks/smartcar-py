@@ -7,7 +7,6 @@ from ..shared import vehiclesresponse as shared_vehiclesresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListVehiclesRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
@@ -15,7 +14,6 @@ class ListVehiclesRequest:
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     r"""Index to start vehicle list at"""
     
-
 
 
 

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from smartcar import utils
 from smartcar.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class VehicleManagement:
     sdk_configuration: SDKConfiguration
@@ -41,7 +41,7 @@ class VehicleManagement:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.DeletedConnection]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.DeletedConnection]])
                 res.deleted_connections_response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

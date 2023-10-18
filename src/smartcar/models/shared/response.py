@@ -9,7 +9,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from smartcar import utils
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 class ResponseBodySecurityReadChargingPortStatus(str, Enum):
     OPEN = 'OPEN'
@@ -21,7 +21,6 @@ class ResponseBodySecurityReadChargingPortType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySecurityReadChargingPort:
     status: Optional[ResponseBodySecurityReadChargingPortStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -42,7 +41,6 @@ class ResponseBodySecurityReadDoorsType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySecurityReadDoors:
     status: Optional[ResponseBodySecurityReadDoorsStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -61,7 +59,6 @@ class ResponseBodySecurityReadStorageType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySecurityReadStorage:
     status: Optional[ResponseBodySecurityReadStorageStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -79,7 +76,6 @@ class ResponseBodySecurityReadSunroofType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySecurityReadSunroof:
     status: Optional[ResponseBodySecurityReadSunroofStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -100,7 +96,6 @@ class ResponseBodySecurityReadWindowsType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySecurityReadWindows:
     status: Optional[ResponseBodySecurityReadWindowsStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
@@ -110,15 +105,14 @@ class ResponseBodySecurityReadWindows:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySecurityRead:
-    charging_port: Optional[list[ResponseBodySecurityReadChargingPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chargingPort'), 'exclude': lambda f: f is None }})
-    doors: Optional[list[ResponseBodySecurityReadDoors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doors'), 'exclude': lambda f: f is None }})
+    charging_port: Optional[List[ResponseBodySecurityReadChargingPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chargingPort'), 'exclude': lambda f: f is None }})
+    doors: Optional[List[ResponseBodySecurityReadDoors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doors'), 'exclude': lambda f: f is None }})
     is_locked: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isLocked'), 'exclude': lambda f: f is None }})
-    storage: Optional[list[ResponseBodySecurityReadStorage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage'), 'exclude': lambda f: f is None }})
-    sunroof: Optional[list[ResponseBodySecurityReadSunroof]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sunroof'), 'exclude': lambda f: f is None }})
-    windows: Optional[list[ResponseBodySecurityReadWindows]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('windows'), 'exclude': lambda f: f is None }})
+    storage: Optional[List[ResponseBodySecurityReadStorage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage'), 'exclude': lambda f: f is None }})
+    sunroof: Optional[List[ResponseBodySecurityReadSunroof]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sunroof'), 'exclude': lambda f: f is None }})
+    windows: Optional[List[ResponseBodySecurityReadWindows]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('windows'), 'exclude': lambda f: f is None }})
     
 
 
@@ -128,7 +122,6 @@ class ResponseBodySuccessResponseStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodySuccessResponse:
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
@@ -138,7 +131,6 @@ class ResponseBodySuccessResponse:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyUserInfo:
     r"""A user ID (UUID v4)."""
@@ -148,7 +140,6 @@ class ResponseBodyUserInfo:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyVinInfo:
     r"""A vehicle’s manufacturer identifier."""
@@ -158,10 +149,9 @@ class ResponseBodyVinInfo:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyCompatibilityResponse:
-    capabilities: Optional[list[shared_capability.Capability]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities'), 'exclude': lambda f: f is None }})
+    capabilities: Optional[List[shared_capability.Capability]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities'), 'exclude': lambda f: f is None }})
     compatible: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compatible'), 'exclude': lambda f: f is None }})
     reason: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reason') }})
     
@@ -169,7 +159,6 @@ class ResponseBodyCompatibilityResponse:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyBatteryCapacity:
     capacity: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capacity'), 'exclude': lambda f: f is None }})
@@ -179,7 +168,6 @@ class ResponseBodyBatteryCapacity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyBatteryLevel:
     percent_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('percentRemaining'), 'exclude': lambda f: f is None }})
@@ -191,7 +179,6 @@ class ResponseBodyBatteryLevel:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyChargeVoltage:
     voltage: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('voltage'), 'exclude': lambda f: f is None }})
@@ -201,7 +188,6 @@ class ResponseBodyChargeVoltage:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyChargeTime:
     time: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('time'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
@@ -211,7 +197,6 @@ class ResponseBodyChargeTime:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyChargeLimit:
     limit: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
@@ -226,7 +211,6 @@ class ResponseBodyChargeStatusState(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyChargeStatus:
     is_plugged_in: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isPluggedIn'), 'exclude': lambda f: f is None }})
@@ -237,7 +221,6 @@ class ResponseBodyChargeStatus:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyEngineOil:
     life_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lifeRemaining'), 'exclude': lambda f: f is None }})
@@ -247,7 +230,6 @@ class ResponseBodyEngineOil:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyTirePressure:
     back_left: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('backLeft'), 'exclude': lambda f: f is None }})
@@ -263,7 +245,6 @@ class ResponseBodyTirePressure:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyFuelTank:
     amount_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amountRemaining'), 'exclude': lambda f: f is None }})
@@ -277,7 +258,6 @@ class ResponseBodyFuelTank:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyOdometer:
     distance: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('distance'), 'exclude': lambda f: f is None }})
@@ -286,13 +266,11 @@ class ResponseBodyOdometer:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResponseBodyLocation:
     latitude: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latitude') }})
     longitude: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('longitude') }})
     
-
 
 
 
@@ -306,12 +284,11 @@ class ResponseCode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Response:
     body: Optional[Union[ResponseBodyLocation, ResponseBodyOdometer, ResponseBodyFuelTank, ResponseBodyTirePressure, ResponseBodyEngineOil, ResponseBodyChargeStatus, ResponseBodyChargeLimit, ResponseBodyChargeTime, ResponseBodyChargeVoltage, ResponseBodyBatteryLevel, ResponseBodyBatteryCapacity, ResponseBodyCompatibilityResponse, ResponseBodyVinInfo, ResponseBodyUserInfo, ResponseBodySuccessResponse, ResponseBodySecurityRead]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
     code: Optional[ResponseCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
-    headers: Optional[list[shared_header.Header]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
+    headers: Optional[List[shared_header.Header]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})
     
 

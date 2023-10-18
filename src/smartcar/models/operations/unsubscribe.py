@@ -7,13 +7,11 @@ from ..shared import successresponse as shared_successresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UnsubscribeRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     webhook_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'webhookId', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -12,13 +12,11 @@ GET_MANAGEMENT_VEHICLE_CONNECTIONS_SERVERS = [
 ]
 
 
-
 @dataclasses.dataclass
 class GetManagementVehicleConnectionsSecurity:
     password: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'basic', 'field_name': 'password' }})
     username: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'basic', 'field_name': 'username' }})
     
-
 
 
 
@@ -33,7 +31,6 @@ class GetManagementVehicleConnectionsRequest:
     vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'vehicle_id', 'style': 'form', 'explode': True }})
     r"""Filter for connections to the provided vehicle ID."""
     
-
 
 
 

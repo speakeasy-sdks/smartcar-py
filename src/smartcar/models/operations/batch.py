@@ -4,16 +4,14 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import batchresponse as shared_batchresponse
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class BatchRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
-    request_body: Optional[list[str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Optional[List[str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

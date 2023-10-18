@@ -7,12 +7,10 @@ from ..shared import temperature as shared_temperature
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetTeslaExteriorTemperatureRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

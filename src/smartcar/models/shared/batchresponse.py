@@ -5,13 +5,12 @@ import dataclasses
 from ..shared import response as shared_response
 from dataclasses_json import Undefined, dataclass_json
 from smartcar import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class BatchResponse:
-    responses: Optional[list[shared_response.Response]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('responses'), 'exclude': lambda f: f is None }})
+    responses: Optional[List[shared_response.Response]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('responses'), 'exclude': lambda f: f is None }})
     
 

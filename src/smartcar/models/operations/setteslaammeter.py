@@ -8,13 +8,11 @@ from ..shared import successresponse as shared_successresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SetTeslaAmmeterRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     charge_ammeter: Optional[shared_chargeammeter.ChargeAmmeter] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

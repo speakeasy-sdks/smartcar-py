@@ -7,12 +7,10 @@ from ..shared import vehicleinfo as shared_vehicleinfo
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetVehicleRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

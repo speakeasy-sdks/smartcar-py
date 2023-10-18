@@ -7,7 +7,6 @@ from ..shared import permission as shared_permission
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetPermissionsRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class GetPermissionsRequest:
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     r"""Index to start vehicle list at"""
     
-
 
 
 

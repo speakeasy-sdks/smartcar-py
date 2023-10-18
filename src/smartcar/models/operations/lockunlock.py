@@ -8,13 +8,11 @@ from ..shared import successresponse as shared_successresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class LockUnlockRequest:
     vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     security_action: Optional[shared_securityaction.SecurityAction] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

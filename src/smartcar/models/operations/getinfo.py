@@ -7,7 +7,6 @@ from ..shared import userinfo as shared_userinfo
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetInfoResponse:
     content_type: str = dataclasses.field()

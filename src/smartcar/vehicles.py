@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from smartcar import utils
 from smartcar.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class Vehicles:
     r"""Operations about vehicles"""
@@ -13,7 +13,7 @@ class Vehicles:
         self.sdk_configuration = sdk_config
         
     
-    def batch(self, vehicle_id: str, request_body: Optional[list[str]] = None) -> operations.BatchResponse:
+    def batch(self, vehicle_id: str, request_body: Optional[List[str]] = None) -> operations.BatchResponse:
         r"""Batch
         __Description__ Returns a list of responses from multiple Smartcar endpoints, all combined into a single request. Note: Batch requests is a paid feature. Please contact us to upgrade your plan and obtain access.
         """
