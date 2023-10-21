@@ -22,7 +22,7 @@ s = smartcar.Smartcar()
 res = s.vehicle_management.delete_management_vehicle_connections(operations.DeleteManagementVehicleConnectionsSecurity(
     password="",
     username="",
-), user_id='tempora', vehicle_id='Gasoline')
+), user_id='string', vehicle_id='string')
 
 if res.deleted_connections_response is not None:
     # handle response
@@ -60,7 +60,7 @@ s = smartcar.Smartcar()
 res = s.vehicle_management.get_management_vehicle_connections(operations.GetManagementVehicleConnectionsSecurity(
     password="",
     username="",
-), cursor=311286, limit=688212, user_id='North', vehicle_id='pish')
+), cursor=311286, limit=688212, user_id='string', vehicle_id='string')
 
 if res.connections_response is not None:
     # handle response

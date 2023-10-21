@@ -28,7 +28,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.cadillac.get_charge_time(vehicle_id='lightly')
+res = s.cadillac.get_charge_time(vehicle_id='string')
 
 if res.charge_time is not None:
     # handle response
@@ -69,7 +69,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.cadillac.get_voltage(vehicle_id='Global')
+res = s.cadillac.get_voltage(vehicle_id='string')
 
 if res.charge_voltage is not None:
     # handle response
