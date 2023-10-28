@@ -130,6 +130,127 @@ Here's an example of one such pagination call:
 
 <!-- End Pagination -->
 
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.smartcar.com/v2.0` | None |
+
+For example:
+
+
+```python
+import smartcar
+from smartcar.models import operations, shared
+
+s = smartcar.Smartcar(
+    security=shared.Security(
+        basic_auth=shared.SchemeBasicAuth(
+            password="",
+            username="",
+        ),
+    ),
+    server_idx=0
+)
+
+
+res = s.cadillac.get_charge_time(vehicle_id='string')
+
+if res.charge_time is not None:
+    # handle response
+    pass
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+
+
+```python
+import smartcar
+from smartcar.models import operations, shared
+
+s = smartcar.Smartcar(
+    security=shared.Security(
+        basic_auth=shared.SchemeBasicAuth(
+            password="",
+            username="",
+        ),
+    ),
+    server_url="https://api.smartcar.com/v2.0"
+)
+
+
+res = s.cadillac.get_charge_time(vehicle_id='string')
+
+if res.charge_time is not None:
+    # handle response
+    pass
+```
+
+## Override Server URL Per-Operation
+
+The server URL can also be overridden on a per-operation basis, provided a server list was specified for the operation. For example:
+
+
+```python
+import smartcar
+from smartcar.models import operations
+
+s = smartcar.Smartcar()
+
+
+res = s.vehicle_management.delete_management_vehicle_connections(operations.DeleteManagementVehicleConnectionsSecurity(
+    password="",
+    username="",
+), server_url="https://management.smartcar.com/v2.0", user_id='string', vehicle_id='string')
+
+if res.deleted_connections_response is not None:
+    # handle response
+    pass
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```python
+import smartcar
+import requests
+
+http_client = requests.Session()
+http_client.headers.update({'x-custom-header': 'someValue'})
+s = smartcar.Smartcar(client: http_client)
+```
+
+
+<!-- End Custom HTTP Client -->
+
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
 
