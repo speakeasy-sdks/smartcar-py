@@ -1,0 +1,9 @@
+# ResponseBodySecurityReadDoors
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `status`                                                                                                    | [Optional[ResponseBodySecurityReadDoorsStatus]](../../models/shared/responsebodysecurityreaddoorsstatus.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `type`                                                                                                      | [Optional[ResponseBodySecurityReadDoorsType]](../../models/shared/responsebodysecurityreaddoorstype.md)     | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
