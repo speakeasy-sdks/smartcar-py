@@ -1,0 +1,9 @@
+# ResponseBodySecurityReadStorage
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `status`                                                                                                        | [Optional[ResponseBodySecurityReadStorageStatus]](../../models/shared/responsebodysecurityreadstoragestatus.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
+| `type`                                                                                                          | [Optional[ResponseBodySecurityReadStorageType]](../../models/shared/responsebodysecurityreadstoragetype.md)     | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
