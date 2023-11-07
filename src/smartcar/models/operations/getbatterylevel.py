@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import batterylevel as shared_batterylevel
+from ...models.shared import batterylevel as shared_batterylevel
 from typing import Optional
 
 

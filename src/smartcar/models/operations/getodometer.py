@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import odometer as shared_odometer
+from ...models.shared import odometer as shared_odometer
 from typing import Optional
 
 

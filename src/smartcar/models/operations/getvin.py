@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import vininfo as shared_vininfo
+from ...models.shared import vininfo as shared_vininfo
 from typing import Optional
 
 

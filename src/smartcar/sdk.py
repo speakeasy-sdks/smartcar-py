@@ -17,17 +17,17 @@ from typing import Dict
 
 class Smartcar:
     r"""Smartcar API: OpenAPI schema for Smartcar's API"""
-    cadillac: Cadillac
-    chevrolet: Chevrolet
     compatibility: Compatibility
     r"""Operations about compatibility"""
-    evs: Evs
-    r"""Operations about electric vehicles"""
-    tesla: Tesla
-    user: User
     vehicle_management: VehicleManagement
+    user: User
     vehicles: Vehicles
     r"""Operations about vehicles"""
+    tesla: Tesla
+    evs: Evs
+    r"""Operations about electric vehicles"""
+    cadillac: Cadillac
+    chevrolet: Chevrolet
     webhooks: Webhooks
 
     sdk_configuration: SDKConfiguration
@@ -71,13 +71,13 @@ class Smartcar:
         self._init_sdks()
     
     def _init_sdks(self):
+        self.compatibility = Compatibility(self.sdk_configuration)
+        self.vehicle_management = VehicleManagement(self.sdk_configuration)
+        self.user = User(self.sdk_configuration)
+        self.vehicles = Vehicles(self.sdk_configuration)
+        self.tesla = Tesla(self.sdk_configuration)
+        self.evs = Evs(self.sdk_configuration)
         self.cadillac = Cadillac(self.sdk_configuration)
         self.chevrolet = Chevrolet(self.sdk_configuration)
-        self.compatibility = Compatibility(self.sdk_configuration)
-        self.evs = Evs(self.sdk_configuration)
-        self.tesla = Tesla(self.sdk_configuration)
-        self.user = User(self.sdk_configuration)
-        self.vehicle_management = VehicleManagement(self.sdk_configuration)
-        self.vehicles = Vehicles(self.sdk_configuration)
         self.webhooks = Webhooks(self.sdk_configuration)
     

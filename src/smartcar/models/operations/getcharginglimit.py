@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import chargelimit as shared_chargelimit
+from ...models.shared import chargelimit as shared_chargelimit
 from typing import Optional
 
 

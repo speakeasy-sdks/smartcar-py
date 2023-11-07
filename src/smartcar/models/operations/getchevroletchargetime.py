@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import chargetime as shared_chargetime
+from ...models.shared import chargetime as shared_chargetime
 from typing import Optional
 
 

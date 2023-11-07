@@ -1,9 +1,0 @@
-# ResponseBodySecurityReadSunroof
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `status`                                                                                                        | [Optional[ResponseBodySecurityReadSunroofStatus]](../../models/shared/responsebodysecurityreadsunroofstatus.md) | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
-| `type`                                                                                                          | [Optional[ResponseBodySecurityReadSunroofType]](../../models/shared/responsebodysecurityreadsunrooftype.md)     | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |

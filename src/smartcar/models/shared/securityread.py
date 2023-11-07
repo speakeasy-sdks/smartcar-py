@@ -7,29 +7,29 @@ from enum import Enum
 from smartcar import utils
 from typing import List, Optional
 
-class SecurityReadChargingPortStatus(str, Enum):
+class SecurityReadSchemasChargingPortStatus(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
 
-class SecurityReadChargingPortType(str, Enum):
+class Type(str, Enum):
     CHARGING_PORT = 'chargingPort'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SecurityReadChargingPort:
-    status: Optional[SecurityReadChargingPortStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    type: Optional[SecurityReadChargingPortType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+class ChargingPort:
+    status: Optional[SecurityReadSchemasChargingPortStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
-class SecurityReadDoorsStatus(str, Enum):
+class SecurityReadStatus(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
 
-class SecurityReadDoorsType(str, Enum):
+class SecurityReadType(str, Enum):
     FRONT_LEFT = 'frontLeft'
     FRONT_RIGHT = 'frontRight'
     BACK_LEFT = 'backLeft'
@@ -38,53 +38,53 @@ class SecurityReadDoorsType(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SecurityReadDoors:
-    status: Optional[SecurityReadDoorsStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    type: Optional[SecurityReadDoorsType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+class Doors:
+    status: Optional[SecurityReadStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    type: Optional[SecurityReadType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
-class SecurityReadStorageStatus(str, Enum):
+class SecurityReadSchemasStatus(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
 
-class SecurityReadStorageType(str, Enum):
+class SecurityReadSchemasType(str, Enum):
     REAR = 'rear'
     FRONT = 'front'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SecurityReadStorage:
-    status: Optional[SecurityReadStorageStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    type: Optional[SecurityReadStorageType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+class Storage:
+    status: Optional[SecurityReadSchemasStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    type: Optional[SecurityReadSchemasType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
-class SecurityReadSunroofStatus(str, Enum):
+class SecurityReadSchemasSunroofStatus(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
 
-class SecurityReadSunroofType(str, Enum):
+class SecurityReadSchemasSunroofType(str, Enum):
     SUNROOF = 'sunroof'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SecurityReadSunroof:
-    status: Optional[SecurityReadSunroofStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    type: Optional[SecurityReadSunroofType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+class Sunroof:
+    status: Optional[SecurityReadSchemasSunroofStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    type: Optional[SecurityReadSchemasSunroofType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
-class SecurityReadWindowsStatus(str, Enum):
+class SecurityReadSchemasWindowsStatus(str, Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
     UNKNOWN = 'UNKNOWN'
 
-class SecurityReadWindowsType(str, Enum):
+class SecurityReadSchemasWindowsType(str, Enum):
     FRONT_LEFT = 'frontLeft'
     FRONT_RIGHT = 'frontRight'
     BACK_LEFT = 'backLeft'
@@ -93,9 +93,9 @@ class SecurityReadWindowsType(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SecurityReadWindows:
-    status: Optional[SecurityReadWindowsStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    type: Optional[SecurityReadWindowsType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+class Windows:
+    status: Optional[SecurityReadSchemasWindowsStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    type: Optional[SecurityReadSchemasWindowsType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
@@ -103,11 +103,11 @@ class SecurityReadWindows:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SecurityRead:
-    charging_port: Optional[List[SecurityReadChargingPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chargingPort'), 'exclude': lambda f: f is None }})
-    doors: Optional[List[SecurityReadDoors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doors'), 'exclude': lambda f: f is None }})
+    charging_port: Optional[List[ChargingPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('chargingPort'), 'exclude': lambda f: f is None }})
+    doors: Optional[List[Doors]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doors'), 'exclude': lambda f: f is None }})
     is_locked: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isLocked'), 'exclude': lambda f: f is None }})
-    storage: Optional[List[SecurityReadStorage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage'), 'exclude': lambda f: f is None }})
-    sunroof: Optional[List[SecurityReadSunroof]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sunroof'), 'exclude': lambda f: f is None }})
-    windows: Optional[List[SecurityReadWindows]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('windows'), 'exclude': lambda f: f is None }})
+    storage: Optional[List[Storage]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storage'), 'exclude': lambda f: f is None }})
+    sunroof: Optional[List[Sunroof]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sunroof'), 'exclude': lambda f: f is None }})
+    windows: Optional[List[Windows]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('windows'), 'exclude': lambda f: f is None }})
     
 

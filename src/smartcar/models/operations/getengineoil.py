@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import engineoil as shared_engineoil
+from ...models.shared import engineoil as shared_engineoil
 from typing import Optional
 
 

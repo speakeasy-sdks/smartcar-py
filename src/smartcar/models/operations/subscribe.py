@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import successresponse as shared_successresponse
-from ..shared import webhookinfo as shared_webhookinfo
+from ...models.shared import successresponse as shared_successresponse
+from ...models.shared import webhookinfo as shared_webhookinfo
 from typing import Optional
 
 

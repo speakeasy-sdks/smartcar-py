@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import chargeammeter as shared_chargeammeter
-from ..shared import successresponse as shared_successresponse
+from ...models.shared import chargeammeter as shared_chargeammeter
+from ...models.shared import successresponse as shared_successresponse
 from typing import Optional
 
 

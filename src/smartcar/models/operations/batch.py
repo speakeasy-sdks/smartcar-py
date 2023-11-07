@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import batchresponse as shared_batchresponse
+from ...models.shared import batchresponse as shared_batchresponse
 from typing import List, Optional
 
 

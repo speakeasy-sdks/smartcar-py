@@ -1,5 +1,5 @@
 # Evs
-(*evs*)
+(*.evs*)
 
 ## Overview
 
@@ -288,7 +288,7 @@ s = smartcar.Smartcar(
 
 
 res = s.evs.start_stop_charge(vehicle_id='string', charge_action=shared.ChargeAction(
-    action=shared.ChargeActionAction.START,
+    action=shared.Action.START,
 ))
 
 if res.success_response is not None:

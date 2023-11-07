@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deletedconnection as shared_deletedconnection
+from ...models.shared import deletedconnection as shared_deletedconnection
 from typing import List, Optional
 
 DELETE_MANAGEMENT_VEHICLE_CONNECTIONS_SERVERS = [

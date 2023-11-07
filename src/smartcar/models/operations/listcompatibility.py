@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import compatibilityresponse as shared_compatibilityresponse
+from ...models.shared import compatibilityresponse as shared_compatibilityresponse
 from typing import Optional
 
 

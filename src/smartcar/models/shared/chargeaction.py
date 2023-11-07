@@ -7,7 +7,7 @@ from enum import Enum
 from smartcar import utils
 from typing import Optional
 
-class ChargeActionAction(str, Enum):
+class Action(str, Enum):
     START = 'START'
     STOP = 'STOP'
 
@@ -15,6 +15,6 @@ class ChargeActionAction(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ChargeAction:
-    action: Optional[ChargeActionAction] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action'), 'exclude': lambda f: f is None }})
+    action: Optional[Action] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action'), 'exclude': lambda f: f is None }})
     
 

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import chargevoltage as shared_chargevoltage
+from ...models.shared import chargevoltage as shared_chargevoltage
 from typing import Optional
 
 

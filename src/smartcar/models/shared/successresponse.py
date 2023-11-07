@@ -7,7 +7,7 @@ from enum import Enum
 from smartcar import utils
 from typing import Optional
 
-class SuccessResponseStatus(str, Enum):
+class Status(str, Enum):
     SUCCESS = 'SUCCESS'
     FAILED = 'FAILED'
 
@@ -16,6 +16,6 @@ class SuccessResponseStatus(str, Enum):
 @dataclasses.dataclass
 class SuccessResponse:
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    status: Optional[SuccessResponseStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 

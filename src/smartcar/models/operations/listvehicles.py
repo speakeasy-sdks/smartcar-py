@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import vehiclesresponse as shared_vehiclesresponse
+from ...models.shared import vehiclesresponse as shared_vehiclesresponse
 from typing import Optional
 
 

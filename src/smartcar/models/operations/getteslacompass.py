@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import compass as shared_compass
+from ...models.shared import compass as shared_compass
 from typing import Optional
 
 

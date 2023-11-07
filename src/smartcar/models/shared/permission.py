@@ -9,7 +9,7 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PermissionPaging:
+class Paging:
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
     
@@ -19,7 +19,7 @@ class PermissionPaging:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Permission:
-    paging: Optional[PermissionPaging] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paging'), 'exclude': lambda f: f is None }})
+    paging: Optional[Paging] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paging'), 'exclude': lambda f: f is None }})
     permissions: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('permissions'), 'exclude': lambda f: f is None }})
     
 

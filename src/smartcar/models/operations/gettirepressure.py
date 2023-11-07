@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import tirepressure as shared_tirepressure
+from ...models.shared import tirepressure as shared_tirepressure
 from typing import Optional
 
 

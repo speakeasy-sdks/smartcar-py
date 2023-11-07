@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import speed as shared_speed
+from ...models.shared import speed as shared_speed
 from typing import Optional
 
 
