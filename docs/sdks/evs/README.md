@@ -1,5 +1,5 @@
 # Evs
-(*.evs*)
+(*evs*)
 
 ## Overview
 
@@ -63,7 +63,11 @@ if res.battery_capacity is not None:
 ### Response
 
 **[operations.GetBatteryCapacityResponse](../../models/operations/getbatterycapacityresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_battery_level
 
@@ -115,7 +119,11 @@ if res.battery_level is not None:
 ### Response
 
 **[operations.GetBatteryLevelResponse](../../models/operations/getbatterylevelresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_charging_limit
 
@@ -156,7 +164,11 @@ if res.charge_limit is not None:
 ### Response
 
 **[operations.GetChargingLimitResponse](../../models/operations/getcharginglimitresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_charging_status
 
@@ -208,7 +220,11 @@ if res.charge_status is not None:
 ### Response
 
 **[operations.GetChargingStatusResponse](../../models/operations/getchargingstatusresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## set_charging_limit
 
@@ -252,7 +268,11 @@ if res.success_response is not None:
 ### Response
 
 **[operations.SetChargingLimitResponse](../../models/operations/setcharginglimitresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## start_stop_charge
 
@@ -307,4 +327,8 @@ if res.success_response is not None:
 ### Response
 
 **[operations.StartStopChargeResponse](../../models/operations/startstopchargeresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

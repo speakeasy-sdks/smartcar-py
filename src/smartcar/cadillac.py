@@ -12,6 +12,7 @@ class Cadillac:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_charge_time(self, vehicle_id: str) -> operations.GetCadillacChargeTimeResponse:
         r"""Retrieve charging completion time for a Cadillac.
         __Description__
@@ -29,7 +30,10 @@ class Cadillac:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -48,6 +52,7 @@ class Cadillac:
         return res
 
     
+    
     def get_voltage(self, vehicle_id: str) -> operations.GetCadillacVoltageResponse:
         r"""Retrieve charging voltmeter time for a Cadillac.
         __Description__
@@ -65,7 +70,10 @@ class Cadillac:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

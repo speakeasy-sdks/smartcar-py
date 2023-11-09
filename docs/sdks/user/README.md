@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ### Available Operations
 
@@ -38,4 +38,8 @@ if res.user_info is not None:
 ### Response
 
 **[operations.GetInfoResponse](../../models/operations/getinforesponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

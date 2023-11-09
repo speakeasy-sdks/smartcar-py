@@ -12,6 +12,7 @@ class VehicleManagement:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_management_vehicle_connections(self, security: operations.DeleteManagementVehicleConnectionsSecurity, user_id: Optional[str] = None, vehicle_id: Optional[str] = None, server_url: Optional[str] = None) -> operations.DeleteManagementVehicleConnectionsResponse:
         r"""Delete vehicle connections by user_id or vehicle_id
         Delete all connections by vehicle or user ID.
@@ -50,6 +51,7 @@ class VehicleManagement:
 
         return res
 
+    
     
     def get_management_vehicle_connections(self, security: operations.GetManagementVehicleConnectionsSecurity, cursor: Optional[int] = None, limit: Optional[int] = None, user_id: Optional[str] = None, vehicle_id: Optional[str] = None, server_url: Optional[str] = None) -> operations.GetManagementVehicleConnectionsResponse:
         r"""Retrieve vehicle connections

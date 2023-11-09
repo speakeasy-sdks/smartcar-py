@@ -1,5 +1,5 @@
 # Chevrolet
-(*.chevrolet*)
+(*chevrolet*)
 
 ### Available Operations
 
@@ -45,7 +45,11 @@ if res.charge_time is not None:
 ### Response
 
 **[operations.GetChevroletChargeTimeResponse](../../models/operations/getchevroletchargetimeresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_voltage
 
@@ -86,4 +90,8 @@ if res.charge_voltage is not None:
 ### Response
 
 **[operations.GetChevroletVoltageResponse](../../models/operations/getchevroletvoltageresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

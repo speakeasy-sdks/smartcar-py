@@ -1,5 +1,5 @@
 # Tesla
-(*.tesla*)
+(*tesla*)
 
 ### Available Operations
 
@@ -52,7 +52,11 @@ if res.charge_ammeter is not None:
 ### Response
 
 **[operations.GetTeslaAmmeterResponse](../../models/operations/getteslaammeterresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_charge_time
 
@@ -93,7 +97,11 @@ if res.charge_time is not None:
 ### Response
 
 **[operations.GetTeslaChargeTimeResponse](../../models/operations/getteslachargetimeresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_compass
 
@@ -134,7 +142,11 @@ if res.compass is not None:
 ### Response
 
 **[operations.GetTeslaCompassResponse](../../models/operations/getteslacompassresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_exterior_temperature
 
@@ -175,7 +187,11 @@ if res.temperature is not None:
 ### Response
 
 **[operations.GetTeslaExteriorTemperatureResponse](../../models/operations/getteslaexteriortemperatureresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_interior_temperature
 
@@ -216,7 +232,11 @@ if res.temperature is not None:
 ### Response
 
 **[operations.GetTeslaInteriorTemperatureResponse](../../models/operations/getteslainteriortemperatureresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_speedometer
 
@@ -257,7 +277,11 @@ if res.speed is not None:
 ### Response
 
 **[operations.GetTeslaSpeedResponse](../../models/operations/getteslaspeedresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_voltage
 
@@ -298,7 +322,11 @@ if res.charge_voltage is not None:
 ### Response
 
 **[operations.GetTeslaVoltageResponse](../../models/operations/getteslavoltageresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_wattmeter
 
@@ -339,7 +367,11 @@ if res.charge_wattage is not None:
 ### Response
 
 **[operations.GetTeslaWattmeterResponse](../../models/operations/getteslawattmeterresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## set_ammeter
 
@@ -383,4 +415,8 @@ if res.success_response is not None:
 ### Response
 
 **[operations.SetTeslaAmmeterResponse](../../models/operations/setteslaammeterresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

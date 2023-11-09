@@ -44,20 +44,20 @@ if res.location is not None:
 ## Available Resources and Operations
 
 
-### [.compatibility](docs/sdks/compatibility/README.md)
+### [compatibility](docs/sdks/compatibility/README.md)
 
 * [list_compatibility](docs/sdks/compatibility/README.md#list_compatibility) - Compatibility
 
-### [.vehicle_management](docs/sdks/vehiclemanagement/README.md)
+### [vehicle_management](docs/sdks/vehiclemanagement/README.md)
 
 * [delete_management_vehicle_connections](docs/sdks/vehiclemanagement/README.md#delete_management_vehicle_connections) - Delete vehicle connections by user_id or vehicle_id
 * [get_management_vehicle_connections](docs/sdks/vehiclemanagement/README.md#get_management_vehicle_connections) - Retrieve vehicle connections
 
-### [.user](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [get_info](docs/sdks/user/README.md#get_info) - User Info
 
-### [.vehicles](docs/sdks/vehicles/README.md)
+### [vehicles](docs/sdks/vehicles/README.md)
 
 * [batch](docs/sdks/vehicles/README.md#batch) - Batch
 * [disconnect](docs/sdks/vehicles/README.md#disconnect) - Revoke Access
@@ -73,7 +73,7 @@ if res.location is not None:
 * [list_vehicles](docs/sdks/vehicles/README.md#list_vehicles) - All Vehicles
 * [lock_unlock](docs/sdks/vehicles/README.md#lock_unlock) - Lock/Unlock Vehicle
 
-### [.tesla](docs/sdks/tesla/README.md)
+### [tesla](docs/sdks/tesla/README.md)
 
 * [get_ammeter](docs/sdks/tesla/README.md#get_ammeter) - Retrieve charging ammeter time for a Tesla.
 * [get_charge_time](docs/sdks/tesla/README.md#get_charge_time) - Retrieve charging completion time for a Tesla.
@@ -85,7 +85,7 @@ if res.location is not None:
 * [get_wattmeter](docs/sdks/tesla/README.md#get_wattmeter) - Retrieve charging wattmeter time for a Tesla.
 * [set_ammeter](docs/sdks/tesla/README.md#set_ammeter) - Set charging ammeter time for a Tesla.
 
-### [.evs](docs/sdks/evs/README.md)
+### [evs](docs/sdks/evs/README.md)
 
 * [get_battery_capacity](docs/sdks/evs/README.md#get_battery_capacity) - EV Battery Capacity
 * [get_battery_level](docs/sdks/evs/README.md#get_battery_level) - EV Battery Level
@@ -94,17 +94,17 @@ if res.location is not None:
 * [set_charging_limit](docs/sdks/evs/README.md#set_charging_limit) - Set EV Charging Limit
 * [start_stop_charge](docs/sdks/evs/README.md#start_stop_charge) - Start or stop charging an electric vehicle.
 
-### [.cadillac](docs/sdks/cadillac/README.md)
+### [cadillac](docs/sdks/cadillac/README.md)
 
 * [get_charge_time](docs/sdks/cadillac/README.md#get_charge_time) - Retrieve charging completion time for a Cadillac.
 * [get_voltage](docs/sdks/cadillac/README.md#get_voltage) - Retrieve charging voltmeter time for a Cadillac.
 
-### [.chevrolet](docs/sdks/chevrolet/README.md)
+### [chevrolet](docs/sdks/chevrolet/README.md)
 
 * [get_charge_time](docs/sdks/chevrolet/README.md#get_charge_time) - Retrieve charging completion time for a Chevrolet.
 * [get_voltage](docs/sdks/chevrolet/README.md#get_voltage) - Retrieve charging voltmeter time for a Chevrolet.
 
-### [.webhooks](docs/sdks/webhooks/README.md)
+### [webhooks](docs/sdks/webhooks/README.md)
 
 * [subscribe](docs/sdks/webhooks/README.md#subscribe) - Subscribe Webhook
 * [unsubscribe](docs/sdks/webhooks/README.md#unsubscribe) - Unsubscribe Webhook
@@ -121,7 +121,41 @@ if res.location is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import smartcar
+from smartcar.models import operations, shared
+
+s = smartcar.Smartcar(
+    security=shared.Security(
+        basic_auth=shared.SchemeBasicAuth(
+            password="",
+            username="",
+        ),
+    ),
+)
+
+
+res = None
+try:
+    res = s.compatibility.list_compatibility(country='{country}', scope='{scope}', vin='{vin}')
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.compatibility_response is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -218,7 +252,7 @@ if res.deleted_connections_response is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import smartcar
@@ -233,12 +267,11 @@ s = smartcar.Smartcar(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
@@ -270,7 +303,7 @@ if res.compatibility_response is not None:
 
 ## Per-Operation Security Schemes
 
-Some operations in your SDK require the security scheme to be specified at the request level. For example:
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
 
 ```python
 import smartcar

@@ -13,6 +13,7 @@ class Vehicles:
         self.sdk_configuration = sdk_config
         
     
+    
     def batch(self, vehicle_id: str, request_body: Optional[List[str]] = None) -> operations.BatchResponse:
         r"""Batch
         __Description__ Returns a list of responses from multiple Smartcar endpoints, all combined into a single request. Note: Batch requests is a paid feature. Please contact us to upgrade your plan and obtain access.
@@ -32,7 +33,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -50,6 +54,7 @@ class Vehicles:
 
         return res
 
+    
     
     def disconnect(self, vehicle_id: str) -> operations.DisconnectResponse:
         r"""Revoke Access
@@ -74,7 +79,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -92,6 +100,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get(self, vehicle_id: str) -> operations.GetVehicleResponse:
         r"""Vehicle Info
@@ -123,7 +132,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -141,6 +153,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get_engine_oil(self, vehicle_id: str) -> operations.GetEngineOilResponse:
         r"""Engine Oil Life
@@ -169,7 +182,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -187,6 +203,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get_fuel_tank(self, vehicle_id: str) -> operations.GetFuelTankResponse:
         r"""Fuel Tank (US Only)
@@ -217,7 +234,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -235,6 +255,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get_location(self, vehicle_id: str) -> operations.GetLocationResponse:
         r"""Location
@@ -264,7 +285,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -282,6 +306,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get_odometer(self, vehicle_id: str) -> operations.GetOdometerResponse:
         r"""Odometer
@@ -310,7 +335,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -328,6 +356,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get_permissions(self, vehicle_id: str, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.GetPermissionsResponse:
         r"""Application Permissions
@@ -366,7 +395,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -384,6 +416,7 @@ class Vehicles:
 
         return res
 
+    
     
     def get_tire_pressure(self, vehicle_id: str) -> operations.GetTirePressureResponse:
         r"""Tire Pressure
@@ -414,7 +447,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -433,6 +469,7 @@ class Vehicles:
         return res
 
     
+    
     def get_vin(self, vehicle_id: str) -> operations.GetVinResponse:
         r"""Returns the vehicle’s manufacturer identifier.
         __Description__
@@ -450,7 +487,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -469,6 +509,7 @@ class Vehicles:
         return res
 
     
+    
     def get_vehicles_vehicle_id_security(self, vehicle_id: str) -> operations.GetVehiclesVehicleIDSecurityResponse:
         r"""Returns the lock status for a vehicle and the open status of its doors, windows, storage units, sunroof and charging port where available. The open status array(s) will be empty if a vehicle has partial support. The request will error if lock status can not be retrieved from the vehicle or the brand is not supported."""
         request = operations.GetVehiclesVehicleIDSecurityRequest(
@@ -482,7 +523,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -500,6 +544,7 @@ class Vehicles:
 
         return res
 
+    
     
     def list_vehicles(self, limit: Optional[int] = None, offset: Optional[int] = None) -> operations.ListVehiclesResponse:
         r"""All Vehicles
@@ -537,7 +582,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -555,6 +603,7 @@ class Vehicles:
 
         return res
 
+    
     
     def lock_unlock(self, vehicle_id: str, security_action: Optional[shared.SecurityAction] = None) -> operations.LockUnlockResponse:
         r"""Lock/Unlock Vehicle
@@ -587,7 +636,10 @@ class Vehicles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

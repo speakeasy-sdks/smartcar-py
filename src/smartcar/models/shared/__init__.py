@@ -24,6 +24,7 @@ from .location import *
 from .odometer import *
 from .permission import *
 from .response import *
+from .schemebasicauth import *
 from .security import *
 from .securityaction import *
 from .securityread import *

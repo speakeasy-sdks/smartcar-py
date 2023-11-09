@@ -90,6 +90,7 @@ src/smartcar/models/shared/chargestatus.py
 src/smartcar/models/shared/chargeaction.py
 src/smartcar/models/shared/webhookinfo.py
 src/smartcar/models/shared/security.py
+src/smartcar/models/shared/schemebasicauth.py
 src/smartcar/models/__init__.py
 src/smartcar/models/errors/__init__.py
 src/smartcar/models/operations/__init__.py
@@ -264,8 +265,8 @@ docs/models/shared/chargestatus.md
 docs/models/shared/action.md
 docs/models/shared/chargeaction.md
 docs/models/shared/webhookinfo.md
-docs/models/shared/schemebasicauth.md
 docs/models/shared/security.md
+docs/models/shared/schemebasicauth.md
 docs/sdks/smartcar/README.md
 docs/sdks/compatibility/README.md
 docs/sdks/vehiclemanagement/README.md

@@ -13,6 +13,7 @@ class Evs:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_battery_capacity(self, vehicle_id: str) -> operations.GetBatteryCapacityResponse:
         r"""EV Battery Capacity
         __Description__
@@ -40,7 +41,10 @@ class Evs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -58,6 +62,7 @@ class Evs:
 
         return res
 
+    
     
     def get_battery_level(self, vehicle_id: str) -> operations.GetBatteryLevelResponse:
         r"""EV Battery Level
@@ -87,7 +92,10 @@ class Evs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -106,6 +114,7 @@ class Evs:
         return res
 
     
+    
     def get_charging_limit(self, vehicle_id: str) -> operations.GetChargingLimitResponse:
         r"""EV Charging Limit
         __Description__
@@ -123,7 +132,10 @@ class Evs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -141,6 +153,7 @@ class Evs:
 
         return res
 
+    
     
     def get_charging_status(self, vehicle_id: str) -> operations.GetChargingStatusResponse:
         r"""EV Charging Status
@@ -170,7 +183,10 @@ class Evs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -188,6 +204,7 @@ class Evs:
 
         return res
 
+    
     
     def set_charging_limit(self, vehicle_id: str, charge_limit: Optional[shared.ChargeLimit] = None) -> operations.SetChargingLimitResponse:
         r"""Set EV Charging Limit
@@ -210,7 +227,10 @@ class Evs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -228,6 +248,7 @@ class Evs:
 
         return res
 
+    
     
     def start_stop_charge(self, vehicle_id: str, charge_action: Optional[shared.ChargeAction] = None) -> operations.StartStopChargeResponse:
         r"""Start or stop charging an electric vehicle.
@@ -261,7 +282,10 @@ class Evs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

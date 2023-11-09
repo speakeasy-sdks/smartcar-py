@@ -12,6 +12,7 @@ class Tesla:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_ammeter(self, vehicle_id: str) -> operations.GetTeslaAmmeterResponse:
         r"""Retrieve charging ammeter time for a Tesla.
         __Description__
@@ -29,7 +30,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -48,6 +52,7 @@ class Tesla:
         return res
 
     
+    
     def get_charge_time(self, vehicle_id: str) -> operations.GetTeslaChargeTimeResponse:
         r"""Retrieve charging completion time for a Tesla.
         __Description__
@@ -65,7 +70,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -84,6 +92,7 @@ class Tesla:
         return res
 
     
+    
     def get_compass(self, vehicle_id: str) -> operations.GetTeslaCompassResponse:
         r"""Retrieve compass heading for a Tesla.
         __Description__
@@ -101,7 +110,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -120,6 +132,7 @@ class Tesla:
         return res
 
     
+    
     def get_exterior_temperature(self, id: str) -> operations.GetTeslaExteriorTemperatureResponse:
         r"""Retrieve exterior temperature for a Tesla.
         __Description__
@@ -137,7 +150,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -156,6 +172,7 @@ class Tesla:
         return res
 
     
+    
     def get_interior_temperature(self, id: str) -> operations.GetTeslaInteriorTemperatureResponse:
         r"""Retrieve interior temperature for a Tesla.
         __Description__
@@ -173,7 +190,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -192,6 +212,7 @@ class Tesla:
         return res
 
     
+    
     def get_speedometer(self, vehicle_id: str) -> operations.GetTeslaSpeedResponse:
         r"""Retrieve speed for a Tesla.
         __Description__
@@ -209,7 +230,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -228,6 +252,7 @@ class Tesla:
         return res
 
     
+    
     def get_voltage(self, vehicle_id: str) -> operations.GetTeslaVoltageResponse:
         r"""Retrieve charging voltmeter time for a Tesla.
         __Description__
@@ -245,7 +270,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -264,6 +292,7 @@ class Tesla:
         return res
 
     
+    
     def get_wattmeter(self, vehicle_id: str) -> operations.GetTeslaWattmeterResponse:
         r"""Retrieve charging wattmeter time for a Tesla.
         __Description__
@@ -281,7 +310,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -299,6 +331,7 @@ class Tesla:
 
         return res
 
+    
     
     def set_ammeter(self, vehicle_id: str, charge_ammeter: Optional[shared.ChargeAmmeter] = None) -> operations.SetTeslaAmmeterResponse:
         r"""Set charging ammeter time for a Tesla.
@@ -321,7 +354,10 @@ class Tesla:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

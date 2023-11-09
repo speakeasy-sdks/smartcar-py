@@ -1,5 +1,5 @@
 # Compatibility
-(*.compatibility*)
+(*compatibility*)
 
 ## Overview
 
@@ -81,4 +81,8 @@ if res.compatibility_response is not None:
 ### Response
 
 **[operations.ListCompatibilityResponse](../../models/operations/listcompatibilityresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

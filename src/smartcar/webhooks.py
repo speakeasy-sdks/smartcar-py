@@ -12,6 +12,7 @@ class Webhooks:
         self.sdk_configuration = sdk_config
         
     
+    
     def subscribe(self, vehicle_id: str, webhook_id: str, webhook_info: Optional[shared.WebhookInfo] = None) -> operations.SubscribeResponse:
         r"""Subscribe Webhook
         __Description__
@@ -44,7 +45,10 @@ class Webhooks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -62,6 +66,7 @@ class Webhooks:
 
         return res
 
+    
     
     def unsubscribe(self, vehicle_id: str, webhook_id: str) -> operations.UnsubscribeResponse:
         r"""Unsubscribe Webhook
@@ -91,7 +96,10 @@ class Webhooks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -13,6 +13,7 @@ class Compatibility:
         self.sdk_configuration = sdk_config
         
     
+    
     def list_compatibility(self, country: Optional[str] = None, scope: Optional[str] = None, vin: Optional[str] = None) -> operations.ListCompatibilityResponse:
         r"""Compatibility
         In the US, compatibility will return a breakdown by scope of what a car is capable of. In Europe, the check is based on the make of the car so will return only a `true` or `false`
@@ -64,7 +65,10 @@ class Compatibility:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

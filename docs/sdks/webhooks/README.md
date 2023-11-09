@@ -1,5 +1,5 @@
 # Webhooks
-(*.webhooks*)
+(*webhooks*)
 
 ### Available Operations
 
@@ -60,7 +60,11 @@ if res.success_response is not None:
 ### Response
 
 **[operations.SubscribeResponse](../../models/operations/subscriberesponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## unsubscribe
 
@@ -112,4 +116,8 @@ if res.success_response is not None:
 ### Response
 
 **[operations.UnsubscribeResponse](../../models/operations/unsubscriberesponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

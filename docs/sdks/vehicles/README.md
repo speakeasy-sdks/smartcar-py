@@ -1,5 +1,5 @@
 # Vehicles
-(*.vehicles*)
+(*vehicles*)
 
 ## Overview
 
@@ -61,7 +61,11 @@ if res.batch_response is not None:
 ### Response
 
 **[operations.BatchResponse](../../models/operations/batchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## disconnect
 
@@ -108,7 +112,11 @@ if res.status is not None:
 ### Response
 
 **[operations.DisconnectResponse](../../models/operations/disconnectresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get
 
@@ -162,7 +170,11 @@ if res.vehicle_info is not None:
 ### Response
 
 **[operations.GetVehicleResponse](../../models/operations/getvehicleresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_engine_oil
 
@@ -213,7 +225,11 @@ if res.engine_oil is not None:
 ### Response
 
 **[operations.GetEngineOilResponse](../../models/operations/getengineoilresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_fuel_tank
 
@@ -266,7 +282,11 @@ if res.fuel_tank is not None:
 ### Response
 
 **[operations.GetFuelTankResponse](../../models/operations/getfueltankresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_location
 
@@ -318,7 +338,11 @@ if res.location is not None:
 ### Response
 
 **[operations.GetLocationResponse](../../models/operations/getlocationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_odometer
 
@@ -369,7 +393,11 @@ if res.odometer is not None:
 ### Response
 
 **[operations.GetOdometerResponse](../../models/operations/getodometerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_permissions
 
@@ -429,7 +457,11 @@ if res.permission is not None:
 ### Response
 
 **[operations.GetPermissionsResponse](../../models/operations/getpermissionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_tire_pressure
 
@@ -482,7 +514,11 @@ if res.tire_pressure is not None:
 ### Response
 
 **[operations.GetTirePressureResponse](../../models/operations/gettirepressureresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_vin
 
@@ -523,7 +559,11 @@ if res.vin_info is not None:
 ### Response
 
 **[operations.GetVinResponse](../../models/operations/getvinresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_vehicles_vehicle_id_security
 
@@ -562,7 +602,11 @@ if res.security_read is not None:
 ### Response
 
 **[operations.GetVehiclesVehicleIDSecurityResponse](../../models/operations/getvehiclesvehicleidsecurityresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_vehicles
 
@@ -621,7 +665,11 @@ if res.vehicles_response is not None:
 ### Response
 
 **[operations.ListVehiclesResponse](../../models/operations/listvehiclesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## lock_unlock
 
@@ -675,4 +723,8 @@ if res.success_response is not None:
 ### Response
 
 **[operations.LockUnlockResponse](../../models/operations/lockunlockresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

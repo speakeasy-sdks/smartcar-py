@@ -1,5 +1,5 @@
 # VehicleManagement
-(*.vehicle_management*)
+(*vehicle_management*)
 
 ### Available Operations
 
@@ -42,7 +42,11 @@ if res.deleted_connections_response is not None:
 ### Response
 
 **[operations.DeleteManagementVehicleConnectionsResponse](../../models/operations/deletemanagementvehicleconnectionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_management_vehicle_connections
 
@@ -82,4 +86,8 @@ if res.connections_response is not None:
 ### Response
 
 **[operations.GetManagementVehicleConnectionsResponse](../../models/operations/getmanagementvehicleconnectionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
