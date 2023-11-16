@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import smartcar
 from smartcar.models import operations, shared

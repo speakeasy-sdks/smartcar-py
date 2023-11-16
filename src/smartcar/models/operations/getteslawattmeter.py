@@ -18,11 +18,11 @@ class GetTeslaWattmeterRequest:
 class GetTeslaWattmeterResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     charge_wattage: Optional[shared_chargewattage.ChargeWattage] = dataclasses.field(default=None)
     r"""returns the wattage of the charger measured by the vehicle."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
