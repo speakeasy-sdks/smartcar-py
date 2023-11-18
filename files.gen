@@ -16,6 +16,7 @@ src/smartcar/utils/__init__.py
 src/smartcar/utils/retries.py
 src/smartcar/utils/utils.py
 src/smartcar/models/errors/sdkerror.py
+tests/helpers.py
 src/smartcar/models/operations/listcompatibility.py
 src/smartcar/models/operations/deletemanagementvehicleconnections.py
 src/smartcar/models/operations/getmanagementvehicleconnections.py
