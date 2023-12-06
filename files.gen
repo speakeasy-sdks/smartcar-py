@@ -96,7 +96,6 @@ src/smartcar/models/__init__.py
 src/smartcar/models/errors/__init__.py
 src/smartcar/models/operations/__init__.py
 src/smartcar/models/shared/__init__.py
-USAGE.md
 docs/models/operations/listcompatibilityrequest.md
 docs/models/operations/listcompatibilityresponse.md
 docs/models/operations/deletemanagementvehicleconnectionssecurity.md
@@ -278,4 +277,5 @@ docs/sdks/evs/README.md
 docs/sdks/cadillac/README.md
 docs/sdks/chevrolet/README.md
 docs/sdks/webhooks/README.md
+USAGE.md
 .gitattributes
