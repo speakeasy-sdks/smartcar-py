@@ -27,7 +27,7 @@ class Vehicles:
         
         url = utils.generate_url(operations.BatchRequest, base_url, '/vehicles/{vehicle_id}/batch', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.BatchRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -630,7 +630,7 @@ class Vehicles:
         
         url = utils.generate_url(operations.LockUnlockRequest, base_url, '/vehicles/{vehicle_id}/security', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "security_action", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.LockUnlockRequest, "security_action", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

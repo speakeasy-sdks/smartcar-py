@@ -221,7 +221,7 @@ class Evs:
         
         url = utils.generate_url(operations.SetChargingLimitRequest, base_url, '/vehicles/{vehicle_id}/charge/limit', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "charge_limit", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.SetChargingLimitRequest, "charge_limit", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -276,7 +276,7 @@ class Evs:
         
         url = utils.generate_url(operations.StartStopChargeRequest, base_url, '/vehicles/{vehicle_id}/charge', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "charge_action", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.StartStopChargeRequest, "charge_action", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
