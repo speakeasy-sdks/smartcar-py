@@ -9,7 +9,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from smartcar import utils
-from typing import Any, List, Optional
+from typing import List, Optional, Union
 
 class SchemasSecurityReadChargingPortStatus(str, Enum):
     OPEN = 'OPEN'
@@ -281,7 +281,7 @@ class Code(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Response:
-    body: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
+    body: Optional[Union[LocationSchemas, OdometerSchemas, FuelTankSchemas, TirePressureSchemas, EngineOilSchemas, ChargeStatusSchemas, ChargeLimitSchemas, ChargeTimeSchemas, ChargeVoltageSchemas, BatteryLevelSchemas, Schemas, CompatibilityResponseSchemas, VinInfoSchemas, UserInfoSchemas, SuccessResponseSchemas, SecurityReadSchemas]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     headers: Optional[List[Header]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})

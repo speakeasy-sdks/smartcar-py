@@ -215,6 +215,7 @@ docs/models/shared/tirepressureschemas.md
 docs/models/shared/fueltankschemas.md
 docs/models/shared/odometerschemas.md
 docs/models/shared/locationschemas.md
+docs/models/shared/body.md
 docs/models/shared/code.md
 docs/models/shared/response.md
 docs/models/shared/header.md
