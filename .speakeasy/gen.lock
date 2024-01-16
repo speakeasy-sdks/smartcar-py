@@ -4,7 +4,7 @@ management:
   docChecksum: e3579991dc4b8af821112b6292856c57
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.228.1
+  generationVersion: 2.233.2
   releaseVersion: 4.2.2
   configChecksum: 2177b535104da6740f36c9d0eacaa8c2
   repoURL: https://github.com/speakeasy-sdks/smartcar-py.git
