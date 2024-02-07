@@ -18,10 +18,10 @@ class GetChargingStatusRequest:
 class GetChargingStatusResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     charge_status: Optional[shared_chargestatus.ChargeStatus] = dataclasses.field(default=None)
     r"""return EV Charge reading"""
     

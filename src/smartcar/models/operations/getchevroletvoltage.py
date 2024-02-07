@@ -18,10 +18,10 @@ class GetChevroletVoltageRequest:
 class GetChevroletVoltageResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     charge_voltage: Optional[shared_chargevoltage.ChargeVoltage] = dataclasses.field(default=None)
     r"""returns the voltage of the charger measured by the vehicle."""
     

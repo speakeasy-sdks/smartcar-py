@@ -18,10 +18,10 @@ class GetTeslaAmmeterRequest:
 class GetTeslaAmmeterResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     charge_ammeter: Optional[shared_chargeammeter.ChargeAmmeter] = dataclasses.field(default=None)
     r"""returns the amperage of the charger measured by the vehicle."""
     
