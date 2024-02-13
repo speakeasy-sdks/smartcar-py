@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(

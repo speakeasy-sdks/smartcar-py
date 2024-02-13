@@ -124,7 +124,8 @@ class SchemasStatus(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SuccessResponseSchemas:
-    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    message: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is SuccessResponseSchemas.UNSET }})
     status: Optional[SchemasStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 
@@ -151,9 +152,10 @@ class VinInfoSchemas:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CompatibilityResponseSchemas:
+    UNSET='__SPEAKEASY_UNSET__'
     capabilities: Optional[List[Capability]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities'), 'exclude': lambda f: f is None }})
     compatible: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compatible'), 'exclude': lambda f: f is None }})
-    reason: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reason') }})
+    reason: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reason'), 'exclude': lambda f: f is CompatibilityResponseSchemas.UNSET }})
     
 
 
@@ -281,7 +283,8 @@ class Code(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Response:
-    body: Optional[Union[LocationSchemas, OdometerSchemas, FuelTankSchemas, TirePressureSchemas, EngineOilSchemas, ChargeStatusSchemas, ChargeLimitSchemas, ChargeTimeSchemas, ChargeVoltageSchemas, BatteryLevelSchemas, Schemas, CompatibilityResponseSchemas, VinInfoSchemas, UserInfoSchemas, SuccessResponseSchemas, SecurityReadSchemas]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
+    UNSET='__SPEAKEASY_UNSET__'
+    body: Optional[Union[LocationSchemas, OdometerSchemas, FuelTankSchemas, TirePressureSchemas, EngineOilSchemas, ChargeStatusSchemas, ChargeLimitSchemas, ChargeTimeSchemas, ChargeVoltageSchemas, BatteryLevelSchemas, Schemas, CompatibilityResponseSchemas, VinInfoSchemas, UserInfoSchemas, SuccessResponseSchemas, SecurityReadSchemas]] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body'), 'exclude': lambda f: f is Response.UNSET }})
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     headers: Optional[List[Header]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headers'), 'exclude': lambda f: f is None }})
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})

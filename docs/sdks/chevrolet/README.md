@@ -16,7 +16,7 @@ When the vehicle is charging, this endpoint returns the date and time the vehicl
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -61,7 +61,7 @@ When the vehicle is plugged in, this endpoint returns the voltage of the charger
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(

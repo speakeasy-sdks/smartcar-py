@@ -29,7 +29,7 @@ __Description__ Returns a list of responses from multiple Smartcar endpoints, al
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -83,7 +83,7 @@ __Response body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -141,7 +141,7 @@ __Response Body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -196,7 +196,7 @@ __Response body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -253,7 +253,7 @@ __Response Body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -309,7 +309,7 @@ __Response Body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -364,7 +364,7 @@ __Response Body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -426,7 +426,7 @@ __Response Body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -485,7 +485,7 @@ __Example Response__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -530,7 +530,7 @@ Returns the vehicle’s manufacturer identifier.
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -573,7 +573,7 @@ Returns the lock status for a vehicle and the open status of its doors, windows,
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -635,7 +635,7 @@ __Response Body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -691,7 +691,7 @@ __Response body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(

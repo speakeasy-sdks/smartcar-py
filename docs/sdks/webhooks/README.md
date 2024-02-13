@@ -26,7 +26,7 @@ __Response body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -86,7 +86,7 @@ __Response body__
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(

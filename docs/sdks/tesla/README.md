@@ -23,7 +23,7 @@ When the vehicle is plugged in, this endpoint returns the amperage of the charge
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -68,7 +68,7 @@ When the vehicle is charging, this endpoint returns the date and time the vehicl
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -113,7 +113,7 @@ This endpoint returns the compass heading of a Tesla. The value is in degrees, w
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -158,7 +158,7 @@ This endpoint returns the exterior temperature of a Tesla, in celsius by default
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -203,7 +203,7 @@ This endpoint returns the interior temperature of a Tesla, in celsius by default
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -248,7 +248,7 @@ This endpoint returns the speed of a Tesla (in kilometers/hour by default or in 
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -293,7 +293,7 @@ When the vehicle is plugged in, this endpoint returns the voltage of the charger
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -338,7 +338,7 @@ When the vehicle is plugged in, this endpoint returns the wattage of the charger
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
@@ -383,7 +383,7 @@ When the vehicle is plugged in, this endpoint sets the amperage of the charger m
 
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
