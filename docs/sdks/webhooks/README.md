@@ -38,7 +38,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.webhooks.subscribe(vehicle_id='string', webhook_id='string', webhook_info=shared.WebhookInfo(
+res = s.webhooks.subscribe(vehicle_id='<value>', webhook_id='<value>', webhook_info=shared.WebhookInfo(
     vehicleid='dc6ea99e-57d1-4e41-b129-27e7eb58713e',
     webhookid='9b6ae692-60cc-4b3e-89d8-71e7549cf805',
 ))
@@ -98,7 +98,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.webhooks.unsubscribe(vehicle_id='string', webhook_id='string')
+res = s.webhooks.unsubscribe(vehicle_id='<value>', webhook_id='<value>')
 
 if res.success_response is not None:
     # handle response

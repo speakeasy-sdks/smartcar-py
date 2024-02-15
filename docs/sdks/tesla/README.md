@@ -35,7 +35,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_ammeter(vehicle_id='string')
+res = s.tesla.get_ammeter(vehicle_id='<value>')
 
 if res.charge_ammeter is not None:
     # handle response
@@ -80,7 +80,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_charge_time(vehicle_id='string')
+res = s.tesla.get_charge_time(vehicle_id='<value>')
 
 if res.charge_time is not None:
     # handle response
@@ -125,7 +125,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_compass(vehicle_id='string')
+res = s.tesla.get_compass(vehicle_id='<value>')
 
 if res.compass is not None:
     # handle response
@@ -170,7 +170,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_exterior_temperature(id='string')
+res = s.tesla.get_exterior_temperature(id='<value>')
 
 if res.temperature is not None:
     # handle response
@@ -215,7 +215,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_interior_temperature(id='string')
+res = s.tesla.get_interior_temperature(id='<value>')
 
 if res.temperature is not None:
     # handle response
@@ -260,7 +260,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_speedometer(vehicle_id='string')
+res = s.tesla.get_speedometer(vehicle_id='<value>')
 
 if res.speed is not None:
     # handle response
@@ -305,7 +305,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_voltage(vehicle_id='string')
+res = s.tesla.get_voltage(vehicle_id='<value>')
 
 if res.charge_voltage is not None:
     # handle response
@@ -350,7 +350,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.get_wattmeter(vehicle_id='string')
+res = s.tesla.get_wattmeter(vehicle_id='<value>')
 
 if res.charge_wattage is not None:
     # handle response
@@ -395,7 +395,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.tesla.set_ammeter(vehicle_id='string', charge_ammeter=shared.ChargeAmmeter(
+res = s.tesla.set_ammeter(vehicle_id='<value>', charge_ammeter=shared.ChargeAmmeter(
     amperage=48,
 ))
 

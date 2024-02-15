@@ -230,7 +230,7 @@ s = smartcar.Smartcar()
 res = s.vehicle_management.delete_management_vehicle_connections(operations.DeleteManagementVehicleConnectionsSecurity(
     password="<YOUR_PASSWORD_HERE>",
     username="<YOUR_USERNAME_HERE>",
-), server_url="https://management.smartcar.com/v2.0", user_id='string', vehicle_id='string')
+), server_url="https://management.smartcar.com/v2.0", user_id='<value>', vehicle_id='<value>')
 
 if res.deleted_connections_response is not None:
     # handle response
@@ -305,7 +305,7 @@ s = smartcar.Smartcar()
 res = s.vehicle_management.delete_management_vehicle_connections(operations.DeleteManagementVehicleConnectionsSecurity(
     password="<YOUR_PASSWORD_HERE>",
     username="<YOUR_USERNAME_HERE>",
-), user_id='string', vehicle_id='string')
+), user_id='<value>', vehicle_id='<value>')
 
 if res.deleted_connections_response is not None:
     # handle response

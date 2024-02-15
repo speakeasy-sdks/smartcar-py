@@ -28,7 +28,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.chevrolet.get_charge_time(vehicle_id='string')
+res = s.chevrolet.get_charge_time(vehicle_id='<value>')
 
 if res.charge_time is not None:
     # handle response
@@ -73,7 +73,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.chevrolet.get_voltage(vehicle_id='string')
+res = s.chevrolet.get_voltage(vehicle_id='<value>')
 
 if res.charge_voltage is not None:
     # handle response

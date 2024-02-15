@@ -41,7 +41,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.batch(vehicle_id='string', request_body=[
+res = s.vehicles.batch(vehicle_id='<value>', request_body=[
     '/odometer',
 ])
 
@@ -95,7 +95,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.disconnect(vehicle_id='string')
+res = s.vehicles.disconnect(vehicle_id='<value>')
 
 if res.status is not None:
     # handle response
@@ -153,7 +153,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get(vehicle_id='string')
+res = s.vehicles.get(vehicle_id='<value>')
 
 if res.vehicle_info is not None:
     # handle response
@@ -208,7 +208,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_engine_oil(vehicle_id='string')
+res = s.vehicles.get_engine_oil(vehicle_id='<value>')
 
 if res.engine_oil is not None:
     # handle response
@@ -265,7 +265,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_fuel_tank(vehicle_id='string')
+res = s.vehicles.get_fuel_tank(vehicle_id='<value>')
 
 if res.fuel_tank is not None:
     # handle response
@@ -376,7 +376,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_odometer(vehicle_id='string')
+res = s.vehicles.get_odometer(vehicle_id='<value>')
 
 if res.odometer is not None:
     # handle response
@@ -438,7 +438,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_permissions(vehicle_id='string', limit=362662, offset=729387)
+res = s.vehicles.get_permissions(vehicle_id='<value>', limit=362662, offset=729387)
 
 if res.permission is not None:
     # handle response
@@ -497,7 +497,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_tire_pressure(vehicle_id='string')
+res = s.vehicles.get_tire_pressure(vehicle_id='<value>')
 
 if res.tire_pressure is not None:
     # handle response
@@ -542,7 +542,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_vin(vehicle_id='string')
+res = s.vehicles.get_vin(vehicle_id='<value>')
 
 if res.vin_info is not None:
     # handle response
@@ -585,7 +585,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.get_vehicles_vehicle_id_security(vehicle_id='string')
+res = s.vehicles.get_vehicles_vehicle_id_security(vehicle_id='<value>')
 
 if res.security_read is not None:
     # handle response
@@ -703,7 +703,7 @@ s = smartcar.Smartcar(
 )
 
 
-res = s.vehicles.lock_unlock(vehicle_id='string', security_action=shared.SecurityAction(
+res = s.vehicles.lock_unlock(vehicle_id='<value>', security_action=shared.SecurityAction(
     action=shared.SecurityActionAction.UNLOCK,
 ))
 
