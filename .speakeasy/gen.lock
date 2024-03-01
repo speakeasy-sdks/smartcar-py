@@ -4,18 +4,18 @@ management:
   docChecksum: e3579991dc4b8af821112b6292856c57
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 6.0.2
-  configChecksum: 9a8582056463c0e0d6c98ef7611680a8
+  generationVersion: 2.275.4
+  releaseVersion: 6.1.0
+  configChecksum: 832a94f55b4e847c545aa8ce3ce5c831
   repoURL: https://github.com/speakeasy-sdks/smartcar-py.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/smartcar-py.git
 features:
   python:
-    core: 4.4.7
+    core: 4.5.0
     examples: 2.81.3
     flattening: 2.81.1
-    globalSecurity: 2.83.3
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.1
     methodServerURLs: 2.82.1
@@ -304,3 +304,6 @@ generatedFiles:
   - docs/sdks/webhooks/README.md
   - USAGE.md
   - .gitattributes
+  - src/smartcar/_hooks/sdkhooks.py
+  - src/smartcar/_hooks/types.py
+  - src/smartcar/_hooks/__init__.py
