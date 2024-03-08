@@ -3,16 +3,16 @@ id: 34a2480a-5030-48fa-9f7e-92d08af7f672
 management:
   docChecksum: e3579991dc4b8af821112b6292856c57
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 6.1.0
-  configChecksum: 832a94f55b4e847c545aa8ce3ce5c831
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 6.2.0
+  configChecksum: 623467eaf550731b1ba08f6e8aced2fb
   repoURL: https://github.com/speakeasy-sdks/smartcar-py.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/smartcar-py.git
 features:
   python:
-    core: 4.5.0
+    core: 4.5.1
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.4
@@ -20,7 +20,8 @@ features:
     methodSecurity: 2.82.1
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.1
-    unions: 2.82.5
+    responseFormat: 0.1.0
+    unions: 2.82.6
 generatedFiles:
   - src/smartcar/sdkconfiguration.py
   - src/smartcar/compatibility.py
@@ -33,6 +34,7 @@ generatedFiles:
   - src/smartcar/chevrolet.py
   - src/smartcar/webhooks.py
   - src/smartcar/sdk.py
+  - py.typed
   - pylintrc
   - setup.py
   - src/smartcar/__init__.py

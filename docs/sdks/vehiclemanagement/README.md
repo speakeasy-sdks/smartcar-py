@@ -27,6 +27,7 @@ res = s.vehicle_management.delete_management_vehicle_connections(operations.Dele
 if res.deleted_connections_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.vehicle_management.get_management_vehicle_connections(operations.GetMana
 if res.connections_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

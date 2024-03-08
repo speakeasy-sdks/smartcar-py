@@ -46,6 +46,7 @@ res = s.webhooks.subscribe(vehicle_id='<value>', webhook_id='<value>', webhook_i
 if res.success_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -103,6 +104,7 @@ res = s.webhooks.unsubscribe(vehicle_id='<value>', webhook_id='<value>')
 if res.success_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

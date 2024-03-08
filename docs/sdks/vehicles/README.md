@@ -48,6 +48,7 @@ res = s.vehicles.batch(vehicle_id='<value>', request_body=[
 if res.batch_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -100,6 +101,7 @@ res = s.vehicles.disconnect(vehicle_id='<value>')
 if res.status is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -158,6 +160,7 @@ res = s.vehicles.get(vehicle_id='<value>')
 if res.vehicle_info is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -213,6 +216,7 @@ res = s.vehicles.get_engine_oil(vehicle_id='<value>')
 if res.engine_oil is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -270,6 +274,7 @@ res = s.vehicles.get_fuel_tank(vehicle_id='<value>')
 if res.fuel_tank is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -326,6 +331,7 @@ res = s.vehicles.get_location(vehicle_id='36ab27d0-fd9d-4455-823a-ce30af709ffc')
 if res.location is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -381,6 +387,7 @@ res = s.vehicles.get_odometer(vehicle_id='<value>')
 if res.odometer is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -443,6 +450,7 @@ res = s.vehicles.get_permissions(vehicle_id='<value>', limit=362662, offset=7293
 if res.permission is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -502,6 +510,7 @@ res = s.vehicles.get_tire_pressure(vehicle_id='<value>')
 if res.tire_pressure is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -547,6 +556,7 @@ res = s.vehicles.get_vin(vehicle_id='<value>')
 if res.vin_info is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -590,6 +600,7 @@ res = s.vehicles.get_vehicles_vehicle_id_security(vehicle_id='<value>')
 if res.security_read is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -652,6 +663,7 @@ res = s.vehicles.list_vehicles(limit=568500, offset=311354)
 if res.vehicles_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -710,6 +722,7 @@ res = s.vehicles.lock_unlock(vehicle_id='<value>', security_action=shared.Securi
 if res.success_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -40,6 +40,7 @@ res = s.vehicles.get_location(vehicle_id='36ab27d0-fd9d-4455-823a-ce30af709ffc')
 if res.location is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -151,6 +152,7 @@ except errors.SDKError as e:
 if res.compatibility_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -189,6 +191,7 @@ res = s.compatibility.list_compatibility(country='{country}', scope='{scope}', v
 if res.compatibility_response is not None:
     # handle response
     pass
+
 ```
 
 
@@ -215,6 +218,7 @@ res = s.compatibility.list_compatibility(country='{country}', scope='{scope}', v
 if res.compatibility_response is not None:
     # handle response
     pass
+
 ```
 
 ### Override Server URL Per-Operation
@@ -235,6 +239,7 @@ res = s.vehicle_management.delete_management_vehicle_connections(operations.Dele
 if res.deleted_connections_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -290,6 +295,7 @@ res = s.compatibility.list_compatibility(country='{country}', scope='{scope}', v
 if res.compatibility_response is not None:
     # handle response
     pass
+
 ```
 
 ### Per-Operation Security Schemes
@@ -310,6 +316,7 @@ res = s.vehicle_management.delete_management_vehicle_connections(operations.Dele
 if res.deleted_connections_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

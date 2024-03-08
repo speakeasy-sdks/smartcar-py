@@ -32,6 +32,7 @@ res = s.user.get_info()
 if res.user_info is not None:
     # handle response
     pass
+
 ```
 
 

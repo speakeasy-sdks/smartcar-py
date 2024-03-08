@@ -33,6 +33,7 @@ res = s.cadillac.get_charge_time(vehicle_id='<value>')
 if res.charge_time is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -78,6 +79,7 @@ res = s.cadillac.get_voltage(vehicle_id='<value>')
 if res.charge_voltage is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
