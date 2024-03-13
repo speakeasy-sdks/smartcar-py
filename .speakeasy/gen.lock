@@ -3,10 +3,10 @@ id: 34a2480a-5030-48fa-9f7e-92d08af7f672
 management:
   docChecksum: e3579991dc4b8af821112b6292856c57
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 6.2.0
-  configChecksum: 623467eaf550731b1ba08f6e8aced2fb
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 6.2.1
+  configChecksum: 34defdf3ae49a363d118312c1fd946bb
   repoURL: https://github.com/speakeasy-sdks/smartcar-py.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/smartcar-py.git
@@ -16,7 +16,7 @@ features:
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     methodSecurity: 2.82.1
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.1

@@ -14,7 +14,7 @@ from .webhooks import Webhooks
 from smartcar import utils
 from smartcar._hooks import SDKHooks
 from smartcar.models import shared
-from typing import Callable, Dict, Union
+from typing import Callable, Dict, Optional, Union
 
 class Smartcar:
     r"""Smartcar API: OpenAPI schema for Smartcar's API"""
@@ -35,14 +35,14 @@ class Smartcar:
 
     def __init__(self,
                  security: Union[shared.Security,Callable[[], shared.Security]] = None,
-                 server_idx: int = None,
-                 server_url: str = None,
-                 url_params: Dict[str, str] = None,
-                 client: requests_http.Session = None,
-                 retry_config: utils.RetryConfig = None
+                 server_idx: Optional[int] = None,
+                 server_url: Optional[str] = None,
+                 url_params: Optional[Dict[str, str]] = None,
+                 client: Optional[requests_http.Session] = None,
+                 retry_config: Optional[utils.RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-        
+
         :param security: The security details required for authentication
         :type security: Union[shared.Security,Callable[[], shared.Security]]
         :param server_idx: The index of the server to use for all operations
@@ -58,12 +58,18 @@ class Smartcar:
         """
         if client is None:
             client = requests_http.Session()
-        
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(
+            client,
+            security,
+            server_url,
+            server_idx,
+            retry_config=retry_config
+        )
 
         hooks = SDKHooks()
 
@@ -73,10 +79,11 @@ class Smartcar:
             self.sdk_configuration.server_url = server_url
 
         # pylint: disable=protected-access
-        self.sdk_configuration._hooks=hooks
-       
+        self.sdk_configuration._hooks = hooks
+
         self._init_sdks()
-    
+
+
     def _init_sdks(self):
         self.compatibility = Compatibility(self.sdk_configuration)
         self.vehicle_management = VehicleManagement(self.sdk_configuration)
@@ -87,4 +94,3 @@ class Smartcar:
         self.cadillac = Cadillac(self.sdk_configuration)
         self.chevrolet = Chevrolet(self.sdk_configuration)
         self.webhooks = Webhooks(self.sdk_configuration)
-    
