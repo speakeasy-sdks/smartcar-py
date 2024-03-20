@@ -3,10 +3,10 @@ id: 34a2480a-5030-48fa-9f7e-92d08af7f672
 management:
   docChecksum: e3579991dc4b8af821112b6292856c57
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 6.2.1
-  configChecksum: 34defdf3ae49a363d118312c1fd946bb
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 6.3.0
+  configChecksum: 54e274c5c2b2da33aa9dbce094e14e87
   repoURL: https://github.com/speakeasy-sdks/smartcar-py.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/smartcar-py.git
@@ -15,9 +15,8 @@ features:
     core: 4.5.1
     examples: 2.81.3
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
-    methodSecurity: 2.82.1
     methodServerURLs: 2.82.1
     nameOverrides: 2.81.1
     responseFormat: 0.1.0
@@ -124,10 +123,8 @@ generatedFiles:
   - src/smartcar/models/shared/__init__.py
   - docs/models/operations/listcompatibilityrequest.md
   - docs/models/operations/listcompatibilityresponse.md
-  - docs/models/operations/deletemanagementvehicleconnectionssecurity.md
   - docs/models/operations/deletemanagementvehicleconnectionsrequest.md
   - docs/models/operations/deletemanagementvehicleconnectionsresponse.md
-  - docs/models/operations/getmanagementvehicleconnectionssecurity.md
   - docs/models/operations/getmanagementvehicleconnectionsrequest.md
   - docs/models/operations/getmanagementvehicleconnectionsresponse.md
   - docs/models/operations/getinforesponse.md

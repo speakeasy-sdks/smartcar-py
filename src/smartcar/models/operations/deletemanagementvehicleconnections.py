@@ -13,14 +13,6 @@ DELETE_MANAGEMENT_VEHICLE_CONNECTIONS_SERVERS = [
 
 
 @dataclasses.dataclass
-class DeleteManagementVehicleConnectionsSecurity:
-    password: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'basic', 'field_name': 'password' }})
-    username: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'basic', 'field_name': 'username' }})
-    
-
-
-
-@dataclasses.dataclass
 class DeleteManagementVehicleConnectionsRequest:
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     r"""Delete all connections containing this user ID (UUID v4)."""

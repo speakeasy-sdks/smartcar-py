@@ -13,14 +13,6 @@ GET_MANAGEMENT_VEHICLE_CONNECTIONS_SERVERS = [
 
 
 @dataclasses.dataclass
-class GetManagementVehicleConnectionsSecurity:
-    password: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'basic', 'field_name': 'password' }})
-    username: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'basic', 'field_name': 'username' }})
-    
-
-
-
-@dataclasses.dataclass
 class GetManagementVehicleConnectionsRequest:
     cursor: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'cursor', 'style': 'form', 'explode': True }})
     r"""Used for accessing pages other than the first page. Each page returned has a cursor value that can be passed here to fetch the “next” page."""

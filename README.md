@@ -226,15 +226,19 @@ if res.compatibility_response is not None:
 The server URL can also be overridden on a per-operation basis, provided a server list was specified for the operation. For example:
 ```python
 import smartcar
-from smartcar.models import operations
+from smartcar.models import shared
 
-s = smartcar.Smartcar()
+s = smartcar.Smartcar(
+    security=shared.Security(
+        basic_auth=shared.SchemeBasicAuth(
+            password="<YOUR_PASSWORD_HERE>",
+            username="<YOUR_USERNAME_HERE>",
+        ),
+    ),
+)
 
 
-res = s.vehicle_management.delete_management_vehicle_connections(operations.DeleteManagementVehicleConnectionsSecurity(
-    password="<YOUR_PASSWORD_HERE>",
-    username="<YOUR_USERNAME_HERE>",
-), server_url="https://management.smartcar.com/v2.0", user_id='<value>', vehicle_id='<value>')
+res = s.vehicle_management.delete_management_vehicle_connections(server_url="https://management.smartcar.com/v2.0", user_id='<value>', vehicle_id='<value>')
 
 if res.deleted_connections_response is not None:
     # handle response
@@ -293,27 +297,6 @@ s = smartcar.Smartcar(
 res = s.compatibility.list_compatibility(country='{country}', scope='{scope}', vin='{vin}')
 
 if res.compatibility_response is not None:
-    # handle response
-    pass
-
-```
-
-### Per-Operation Security Schemes
-
-Some operations in this SDK require the security scheme to be specified at the request level. For example:
-```python
-import smartcar
-from smartcar.models import operations
-
-s = smartcar.Smartcar()
-
-
-res = s.vehicle_management.delete_management_vehicle_connections(operations.DeleteManagementVehicleConnectionsSecurity(
-    password="<YOUR_PASSWORD_HERE>",
-    username="<YOUR_USERNAME_HERE>",
-), user_id='<value>', vehicle_id='<value>')
-
-if res.deleted_connections_response is not None:
     # handle response
     pass
 

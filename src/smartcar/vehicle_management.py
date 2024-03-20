@@ -15,11 +15,11 @@ class VehicleManagement:
         
     
     
-    def delete_management_vehicle_connections(self, security: operations.DeleteManagementVehicleConnectionsSecurity, user_id: Optional[str] = None, vehicle_id: Optional[str] = None, server_url: Optional[str] = None) -> operations.DeleteManagementVehicleConnectionsResponse:
+    def delete_management_vehicle_connections(self, user_id: Optional[str] = None, vehicle_id: Optional[str] = None, server_url: Optional[str] = None) -> operations.DeleteManagementVehicleConnectionsResponse:
         r"""Delete vehicle connections by user_id or vehicle_id
         Delete all connections by vehicle or user ID.
         """
-        hook_ctx = HookContext(operation_id='deleteManagementVehicleConnections', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='deleteManagementVehicleConnections', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeleteManagementVehicleConnectionsRequest(
             user_id=user_id,
             vehicle_id=vehicle_id,
@@ -32,7 +32,10 @@ class VehicleManagement:
         
         url = base_url + '/management/connections'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.DeleteManagementVehicleConnectionsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -78,11 +81,11 @@ class VehicleManagement:
 
     
     
-    def get_management_vehicle_connections(self, security: operations.GetManagementVehicleConnectionsSecurity, cursor: Optional[int] = None, limit: Optional[int] = None, user_id: Optional[str] = None, vehicle_id: Optional[str] = None, server_url: Optional[str] = None) -> operations.GetManagementVehicleConnectionsResponse:
+    def get_management_vehicle_connections(self, cursor: Optional[int] = None, limit: Optional[int] = None, user_id: Optional[str] = None, vehicle_id: Optional[str] = None, server_url: Optional[str] = None) -> operations.GetManagementVehicleConnectionsResponse:
         r"""Retrieve vehicle connections
         Returns a paged list of all the vehicles that are connected to the application associated with the management API token used sorted in descending order by connection date.
         """
-        hook_ctx = HookContext(operation_id='getManagementVehicleConnections', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getManagementVehicleConnections', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetManagementVehicleConnectionsRequest(
             cursor=cursor,
             limit=limit,
@@ -97,7 +100,10 @@ class VehicleManagement:
         
         url = base_url + '/management/connections'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetManagementVehicleConnectionsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
