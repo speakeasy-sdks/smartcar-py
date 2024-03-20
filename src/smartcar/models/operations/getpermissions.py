@@ -3,26 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import permission as shared_permission
+from ...models.shared import permission as shared_permission
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetPermissionsRequest:
-    
+    vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
-    r"""Number of vehicles to return"""  
+    r"""Number of vehicles to return"""
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
-    r"""Index to start vehicle list at"""  
-    vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
+    r"""Index to start vehicle list at"""
     
+
+
 
 @dataclasses.dataclass
 class GetPermissionsResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     permission: Optional[shared_permission.Permission] = dataclasses.field(default=None)
-    r"""The applications permissions"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""The applications permissions"""
     
+

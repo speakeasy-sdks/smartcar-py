@@ -1,21 +1,23 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import smartcar
-from smartcar.models import operations, shared
+from smartcar.models import shared
 
 s = smartcar.Smartcar(
     security=shared.Security(
-        bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+        basic_auth=shared.SchemeBasicAuth(
+            password="<YOUR_PASSWORD_HERE>",
+            username="<YOUR_USERNAME_HERE>",
+        ),
     ),
-    vehicle_id="36ab27d0-fd9d-4455-823a-ce30af709ffc",
 )
 
 
-req = operations.GetLocationRequest()
-    
-res = s.vehicles.get_location(req)
+res = s.vehicles.get_location(vehicle_id='36ab27d0-fd9d-4455-823a-ce30af709ffc')
 
 if res.location is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

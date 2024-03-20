@@ -10,12 +10,11 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class FuelTank:
-    r"""return fuel tank reading"""
-    
     amount_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amountRemaining'), 'exclude': lambda f: f is None }})
-    r"""The amount of fuel in the tank (in liters by default or in gallons (U.S.) using the sc-unit-system)."""  
+    r"""The amount of fuel in the tank (in liters by default or in gallons (U.S.) using the sc-unit-system)."""
     percent_remaining: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('percentRemaining'), 'exclude': lambda f: f is None }})
-    r"""The remaining level of fuel in the tank (in percent)."""  
+    r"""The remaining level of fuel in the tank (in percent)."""
     range: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('range'), 'exclude': lambda f: f is None }})
-    r"""The estimated remaining distance the car can travel (in kilometers by default or in miles using the sc-unit-system)."""  
+    r"""The estimated remaining distance the car can travel (in kilometers by default or in miles using the sc-unit-system)."""
     
+

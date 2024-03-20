@@ -1,0 +1,13 @@
+# SecurityRead
+
+
+## Fields
+
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `charging_port`                                                  | List[[shared.ChargingPort](../../models/shared/chargingport.md)] | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
+| `doors`                                                          | List[[shared.Doors](../../models/shared/doors.md)]               | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
+| `is_locked`                                                      | *Optional[bool]*                                                 | :heavy_minus_sign:                                               | N/A                                                              | true                                                             |
+| `storage`                                                        | List[[shared.Storage](../../models/shared/storage.md)]           | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
+| `sunroof`                                                        | List[[shared.Sunroof](../../models/shared/sunroof.md)]           | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
+| `windows`                                                        | List[[shared.Windows](../../models/shared/windows.md)]           | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |

@@ -1,0 +1,11 @@
+# GetEngineOilResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `content_type`                                                                        | *str*                                                                                 | :heavy_check_mark:                                                                    | HTTP response content type for this operation                                         |
+| `status_code`                                                                         | *int*                                                                                 | :heavy_check_mark:                                                                    | HTTP response status code for this operation                                          |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_check_mark:                                                                    | Raw HTTP response; suitable for custom response parsing                               |
+| `engine_oil`                                                                          | [Optional[shared.EngineOil]](../../models/shared/engineoil.md)                        | :heavy_minus_sign:                                                                    | return engine oil reading                                                             |

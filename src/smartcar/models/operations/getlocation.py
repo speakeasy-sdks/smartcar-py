@@ -3,22 +3,26 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import location as shared_location
+from ...models.shared import location as shared_location
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetLocationRequest:
+    vehicle_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})
     
-    vehicle_id: Optional[str] = dataclasses.field(default=None, metadata={'path_param': { 'field_name': 'vehicle_id', 'style': 'simple', 'explode': False }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetLocationResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     location: Optional[shared_location.Location] = dataclasses.field(default=None)
-    r"""A list of vehicles"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""A list of vehicles"""
     
+
